@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.4a</version>
+    <version>0.0.1.4b</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -109,6 +110,9 @@
             <behaviors>
                 <behavior-type name="Timer" sid="8731066911831745">
                     <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="5447916190947021">
+                    <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">

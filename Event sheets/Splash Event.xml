@@ -26,18 +26,28 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-28" name="Set canvas size" sid="3699727510373127" type="System">
-                    <param id="0" name="Width">1366</param>
-                    <param id="1" name="Height">768</param>
-                </action>
-                <action id="-2" name="Go to layout" sid="8085946467022966" type="System">
-                    <param id="0" name="Layout">Game Layout</param>
-                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="5776474067308835" type="SplashScreen" />
             </actions>
         </event-block>
         <event-block sid="2637600411239423">
             <conditions>
                 <condition id="1" name="On any key pressed" sid="8007705479787504" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="7350295952072681" type="SplashScreen" />
+            </actions>
+        </event-block>
+        <event-block sid="2744765439223553">
+            <conditions>
+                <condition id="1" name="On any touch end" sid="4520951387722214" type="Touch" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="9894427567786718" type="SplashScreen" />
+            </actions>
+        </event-block>
+        <event-block sid="1715699734006738">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade out finished" sid="2384983304157243" type="SplashScreen" />
             </conditions>
             <actions>
                 <action id="-28" name="Set canvas size" sid="6192385964354714" type="System">
