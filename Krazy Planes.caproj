@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>Krazy Planes</name>
-    <description></description>
-    <version>0.0.1.3</version>
-    <author></author>
-    <author-email></author-email>
-    <author-website>http://</author-website>
-    <app-id>com.chetan.krazyplanes</app-id>
+    <description>A Flappy Bird clone.</description>
+    <version>0.0.1.4</version>
+    <author>Chetan Davdra</author>
+    <author-email>chet@analogmethod.com</author-email>
+    <author-website>http://analogmethod.com/</author-website>
+    <app-id>com.chetandavdra.krazyplanes</app-id>
     <unique-id>7p7e95bnd7ze</unique-id>
     <saved-with-version>15600</saved-with-version>
     <used-plugins>
