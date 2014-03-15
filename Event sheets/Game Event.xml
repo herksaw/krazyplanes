@@ -114,6 +114,32 @@
                         <action id="-26" name="Restart layout" sid="8571595081278663" type="System" />
                     </actions>
                 </event-block>
+                <event-block sid="6786308769609281">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="1227504295674776" type="Object">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="8613066213525604" type="Object">
+                            <param id="0" name="Y">Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2847940239557229">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="4204868926255226" type="Object">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight - (Self.Height / 2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="5299284008323382" type="Object">
+                            <param id="0" name="Y">LayoutHeight - (Self.Height / 2)</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="9306876313081022" title="Memory">
