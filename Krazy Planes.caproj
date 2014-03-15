@@ -10,9 +10,11 @@
     <unique-id>7p7e95bnd7ze</unique-id>
     <saved-with-version>15600</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
@@ -115,6 +117,15 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="BoxUpdate" sid="5055651003782313">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Browser" sid="6183595759476167">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="BoxVersion" sid="5273758089007138">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
@@ -170,6 +181,7 @@
         </global-instance>
         <global-instance type="Keyboard" uid="5" />
         <global-instance type="Function" uid="7" />
+        <global-instance type="Browser" uid="12" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

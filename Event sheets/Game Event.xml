@@ -15,6 +15,9 @@
                 <action id="-1" name="Set X" sid="7375549400162374" type="Obstacle">
                     <param id="0" name="X">Self.X - 5</param>
                 </action>
+                <action id="0" name="Set text" sid="2641857040566928" type="BoxVersion">
+                    <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="3044679844751381">
@@ -77,6 +80,47 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="1152087620458756" title="System">
+            <sub-events>
+                <event-block sid="3577187647606493">
+                    <conditions>
+                        <condition id="5" name="Is downloading update" sid="7616992987185691" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="621268224485841" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;Downloading update...&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7587258246140686">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is downloading update" sid="3797656544676783" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="5773427850710633" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;No update found.&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2223019641420448">
+                    <conditions>
+                        <condition id="6" name="On update ready" sid="3764123915600546" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="3792966198930175" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;Game updated.&quot;</param>
+                        </action>
+                        <action id="0" name="Alert" sid="5755051489563122" type="Browser">
+                            <param id="0" name="Message">&quot;Krazy Planes has successfully updated just now. Click here to restart the game.&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="1030674509555954" type="Function">
+                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
@@ -110,8 +154,10 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-21" name="Reset global variables" sid="9529153276736874" type="System" />
-                        <action id="-26" name="Restart layout" sid="8571595081278663" type="System" />
+                        <action id="0" name="Call function" sid="178041177058847" type="Function">
+                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="6786308769609281">
@@ -173,14 +219,27 @@
                         <condition id="-4" name="Is outside layout" sid="8013627337455417" type="Player" />
                     </conditions>
                     <actions>
-                        <action id="-21" name="Reset global variables" sid="3615681258170981" type="System" />
-                        <action id="-26" name="Restart layout" sid="2400039001643067" type="System" />
+                        <action id="0" name="Call function" sid="9207155476228784" type="Function">
+                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="4233841121576778" title="Function">
             <sub-events>
+                <event-block sid="2815051232267765">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8190100091631277" type="Function">
+                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="8302040859683901" type="System" />
+                        <action id="-26" name="Restart layout" sid="7188202352554799" type="System" />
+                    </actions>
+                </event-block>
                 <event-block sid="4019165628742884">
                     <conditions>
                         <condition id="0" name="On function" sid="5880032442562335" type="Function">
