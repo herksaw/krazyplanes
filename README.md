@@ -1,4 +1,9 @@
 Krazy Planes
 ============
 
-Initial setup. More code coming soon.
+Alpha status.
+
+Version
+=======
+
+0.0.1.2
