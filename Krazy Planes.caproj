@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description></description>
-    <version>0.0.0.1</version>
+    <version>0.0.1.2</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -10,9 +10,16 @@
     <unique-id>7p7e95bnd7ze</unique-id>
     <saved-with-version>15600</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -22,6 +29,7 @@
         <height>768</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <first-layout>Splash Layout</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -61,15 +69,108 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="YellowPlane" sid="3344237645055089">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5053048256077534" speed="5">
+                    <frame duration="1" hotspotX="0.500835" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="5251346461078875">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Keyboard" sid="5889261220175322">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Function" sid="7167690024211609">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="PipeLongFlip" sid="3369794465903571">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2501295807732895" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PipeShortFlip" sid="3257600284686128">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9029070330345367" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.498328" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SplashScreen" sid="631476130683007">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Timer" sid="8731066911831745">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2288608948445495" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500654" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Player" plugin-id="Sprite" sid="7112896616641586">
+            <members>
+                <member>YellowPlane</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Platform" sid="6773605789435345">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Background" plugin-id="Sprite" sid="2878442006477175">
+            <members>
+                <member>City</member>
+            </members>
+        </family>
+        <family name="Obstacle" plugin-id="Sprite" sid="4039918996126425">
+            <members>
+                <member>PipeLong</member>
+                <member>PipeLongFlip</member>
+                <member>PipeShort</member>
+                <member>PipeShortFlip</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Solid" sid="6410829608669885">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Object" plugin-id="Sprite" sid="8390661123987275">
+            <members>
+                <member>PipeLong</member>
+                <member>PipeLongFlip</member>
+                <member>PipeShort</member>
+                <member>PipeShortFlip</member>
+            </members>
+        </family>
+    </families>
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
+        <layout>Splash Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>
+        <event-sheet>Splash Event.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Touch" uid="4">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="5" />
+        <global-instance type="Function" uid="7" />
+    </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />
     <files-folder expanded="1">

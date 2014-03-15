@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Splash Event</name>
+    <events>
+        <event-block sid="7637864705099747">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6621417393101038" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="2361554139314034" type="System">
+                    <param id="0" name="Width">1024</param>
+                    <param id="1" name="Height">765</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="9121106298394682" type="SplashScreen">
+                    <param id="0" name="Duration">2.0</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;splash_timer&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3424450933728568">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="1783282782973363" type="SplashScreen">
+                    <param id="0" name="Tag">&quot;splash_timer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="3699727510373127" type="System">
+                    <param id="0" name="Width">1366</param>
+                    <param id="1" name="Height">768</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8085946467022966" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2637600411239423">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="8007705479787504" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="6192385964354714" type="System">
+                    <param id="0" name="Width">1366</param>
+                    <param id="1" name="Height">768</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5774364256224769" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
