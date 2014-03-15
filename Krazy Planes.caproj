@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.4b</version>
+    <version>0.0.1.5</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -128,6 +128,9 @@
             <plugin id="Browser" />
         </object-type>
         <object-type name="BoxVersion" sid="5273758089007138">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BoxScore" sid="4708955069273212">
             <plugin id="Text" />
         </object-type>
     </object-folder>

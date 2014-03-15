@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="PlayerScore" sid="5154908271582909" static="0" type="number">0</variable>
         <variable constant="0" name="PipeVariation" sid="7581905702786113" static="0" type="number">0</variable>
         <event-block sid="5301242623716118">
             <conditions>
@@ -17,6 +18,9 @@
                 </action>
                 <action id="0" name="Set text" sid="2641857040566928" type="BoxVersion">
                     <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                </action>
+                <action id="0" name="Set text" sid="1638976365989747" type="BoxScore">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp; PlayerScore</param>
                 </action>
             </actions>
         </event-block>
@@ -183,6 +187,25 @@
                     <actions>
                         <action id="-2" name="Set Y" sid="5299284008323382" type="Object">
                             <param id="0" name="Y">LayoutHeight - (Self.Height / 2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9145739915106394">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="1449135221999532" type="Obstacle">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth / 2</param>
+                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="7603286201014332" type="Obstacle" />
+                        <condition behavior="Solid" id="0" name="Is enabled" sid="9307006103482355" type="Obstacle" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="636128883417767" type="System">
+                            <param id="0" name="Variable">PlayerScore</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="9481362189218478" type="Obstacle">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
