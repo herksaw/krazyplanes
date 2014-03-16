@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.5</version>
+    <version>0.0.1.5a</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -10,18 +10,18 @@
     <unique-id>7p7e95bnd7ze</unique-id>
     <saved-with-version>15600</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -75,8 +75,12 @@
         <object-type name="YellowPlane" sid="3344237645055089">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5053048256077534" speed="5">
-                    <frame duration="1" hotspotX="0.500835" hotspotY="0.5" />
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="5053048256077534" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -139,6 +143,9 @@
             <members>
                 <member>YellowPlane</member>
             </members>
+            <instance-variables>
+                <instance-variable name="frame" sid="8975771689627949" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="6773605789435345">
                     <behavior id="Platform" />

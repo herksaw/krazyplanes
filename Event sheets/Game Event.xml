@@ -84,7 +84,49 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="" sid="1152087620458756" title="System">
+        <event-group description="" sid="6778598484776996" title="Debug">
+            <sub-events>
+                <event-block sid="7010741781343504">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="344801384559382" type="Keyboard">
+                            <param id="0" name="Key">80 (P)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="6860026715137972" type="Player">
+                            <param id="0" name="Instance variable">frame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3082835787764652">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="325045206074811" type="Player">
+                            <param id="0" name="Instance variable">frame</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5105182043192559" type="Player">
+                            <param id="0" name="Instance variable">frame</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1627132731295813">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="4045823028590739" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6317115426811624" type="Player">
+                            <param id="0" name="Frame number">Self.frame</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="1152087620458756" title="System">
             <sub-events>
                 <event-block sid="3577187647606493">
                     <conditions>
@@ -125,7 +167,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
+        <event-group description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>

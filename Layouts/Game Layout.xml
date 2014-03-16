@@ -153,6 +153,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <frame>0</frame>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
@@ -170,13 +173,13 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>683.066772461</x>
+                        <x>683</x>
                         <y>384</y>
                         <z>0</z>
                         <width>160</width>
                         <height>100</height>
                         <depth>0</depth>
-                        <hotspotX>0.500834703</hotspotX>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
