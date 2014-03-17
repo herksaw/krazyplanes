@@ -279,10 +279,8 @@
                         <action id="0" name="Alert" sid="5755051489563122" type="Browser">
                             <param id="0" name="Message">&quot;Krazy Planes has successfully updated just now. Click here to restart the game.&quot;</param>
                         </action>
-                        <action id="0" name="Call function" sid="1030674509555954" type="Function">
-                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
+                        <action id="-21" name="Reset global variables" sid="8259419734595971" type="System" />
+                        <action id="-26" name="Restart layout" sid="6698311130495306" type="System" />
                     </actions>
                 </event-block>
             </sub-events>
