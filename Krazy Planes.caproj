@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.5a</version>
+    <version>0.0.1.6</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -10,18 +10,18 @@
     <unique-id>7p7e95bnd7ze</unique-id>
     <saved-with-version>15600</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -137,6 +137,47 @@
         <object-type name="BoxScore" sid="4708955069273212">
             <plugin id="Text" />
         </object-type>
+        <object-type name="SpriteIntro" sid="3660132389608035">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="6860128921636304">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3081869205948865" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextBox" sid="378979246954202">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SpriteLose" sid="5255525959173283">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="2132037729910297">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="850991440331399" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explosion" sid="7140895954139386">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3597931961961861" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
@@ -207,6 +248,14 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder expanded="1" name="Fonts">
+            <file name="Comix Loud.eot" />
+            <file name="Comix Loud.otf" />
+            <file name="Comix Loud.svg" />
+            <file name="Comix Loud.ttf" />
+            <file name="Comix Loud.woff" />
+            <file name="stylesheet.css" />
         </file-folder>
     </files-folder>
 </c2project>

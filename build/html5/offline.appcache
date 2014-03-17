@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1394977949
+#1395065179
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -12,11 +12,22 @@ images\yellowplane-sheet2.png
 images\pipelongflip-sheet0.png
 images\pipeshortflip-sheet0.png
 images\splashscreen-sheet0.png
+images\spriteintro-sheet0.png
+images\spritelose-sheet0.png
+images\explosion-sheet0.png
+images\explosion-sheet1.png
+images\explosion-sheet2.png
 icon-16.png
 icon-32.png
 icon-114.png
 icon-128.png
 icon-256.png
 loading-logo.png
+comix%20loud.eot
+comix%20loud.otf
+comix%20loud.svg
+comix%20loud.ttf
+comix%20loud.woff
+stylesheet.css
 NETWORK:
 *

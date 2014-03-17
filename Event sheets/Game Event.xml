@@ -3,87 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="isPaused" sid="8789961767725841" static="0" type="number">0</variable>
         <variable constant="0" name="PlayerScore" sid="5154908271582909" static="0" type="number">0</variable>
         <variable constant="0" name="PipeVariation" sid="7581905702786113" static="0" type="number">0</variable>
-        <event-block sid="5301242623716118">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="3337724742984371" type="System" />
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="632268925951167" type="Background">
-                    <param id="0" name="X">Self.X - 5</param>
-                </action>
-                <action id="-1" name="Set X" sid="7375549400162374" type="Obstacle">
-                    <param id="0" name="X">Self.X - 5</param>
-                </action>
-                <action id="0" name="Set text" sid="2641857040566928" type="BoxVersion">
-                    <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
-                </action>
-                <action id="0" name="Set text" sid="1638976365989747" type="BoxScore">
-                    <param id="0" name="Text">&quot;Score: &quot; &amp; PlayerScore</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3044679844751381">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="8751340734026449" type="System">
-                    <param id="0" name="Interval (seconds)">1.5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="3087023869301942" type="System">
-                    <param id="0" name="Variable">PipeVariation</param>
-                    <param id="1" name="Value">floor(random(0, 3))</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="9793698988908935">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="6368921862758036" type="System">
-                            <param id="0" name="Variable">PipeVariation</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="3082472578406251" type="Function">
-                            <param id="0" name="Name">&quot;CreatePipeShort&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4672346855538673">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="2844345157570401" type="System">
-                            <param id="0" name="Variable">PipeVariation</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="6346166461255225" type="Function">
-                            <param id="0" name="Name">&quot;CreatePipeShortLong&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="9209523309650684">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="5813699417304974" type="System">
-                            <param id="0" name="Variable">PipeVariation</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="5250685957278286" type="Function">
-                            <param id="0" name="Name">&quot;CreatePipeLongShort&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
         <event-group description="" sid="6778598484776996" title="Debug">
             <sub-events>
                 <event-block sid="7010741781343504">
@@ -126,8 +48,206 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1152087620458756" title="System">
+        <event-group description="" sid="1152087620458756" title="System">
             <sub-events>
+                <event-block sid="9852792807390658">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="5755246441163918" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="622221904381724" type="BoxScore">
+                            <param id="0" name="Family name">&quot;Conv_Comix Loud&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="9497552670186121" type="BoxUpdate">
+                            <param id="0" name="Family name">&quot;Conv_Comix Loud&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="2801001738219389" type="BoxVersion">
+                            <param id="0" name="Family name">&quot;Conv_Comix Loud&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="222577975658794" type="TextBox">
+                            <param id="0" name="Family name">&quot;Conv_Comix Loud&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1963318082936362" type="System">
+                            <param id="0" name="Object to create">SpriteIntro</param>
+                            <param id="1" name="Layer">&quot;UI&quot;</param>
+                            <param id="2" name="X">LayoutWidth / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 2</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="3744077129471544" type="SpriteIntro" />
+                        <action id="-9" name="Set value" sid="9466876292500404" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6228974169092589">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2611168484593639" type="System" />
+                        <condition id="-14" name="Compare variable" sid="1535108422348815" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="7275786735010941" type="Background">
+                            <param id="0" name="X">Self.X - 5</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="4486064315434869" type="Obstacle">
+                            <param id="0" name="X">Self.X - 5</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9914611989785653" type="BoxVersion">
+                            <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7856869945262624" type="BoxScore">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; PlayerScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4019129678494469">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1281638433833766" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7228193676180163">
+                            <conditions>
+                                <condition id="-3" name="Is on-screen" sid="9791199646139815" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="2268691718794661" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3204874702930825">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="220138308016024" type="SpriteIntro" />
+                                <condition id="3" name="Compare frame" sid="8614571385794655" type="SpriteIntro">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="5372984543098871" type="SpriteIntro">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="4417883067178446" type="SpriteIntro" />
+                                <action id="-9" name="Set value" sid="6575124688491476" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5291087103886329">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="4070934939434496" type="SpriteIntro" />
+                                <condition id="3" name="Compare frame" sid="1996918370081364" type="SpriteIntro">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="7643867972621898">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="3483066689672067" type="SpriteLose" />
+                                <condition id="3" name="Compare frame" sid="2978473582039436" type="SpriteLose">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="2423150451860766" type="SpriteLose">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="3799645931727575" type="SpriteLose" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="3352638043631469">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="6493026489168866" type="SpriteLose" />
+                                <condition id="3" name="Compare frame" sid="6515985557003201" type="SpriteLose">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="2055097645984171" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="5282783424719867" type="SpriteLose">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="6485200836550053" type="SpriteLose" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="4879757645231549">
+                            <conditions>
+                                <condition id="1" name="On any key pressed" sid="2147628593218695" type="Keyboard" />
+                                <condition id="3" name="Compare frame" sid="317757612649701" type="SpriteLose">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9361805154570614" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-21" name="Reset global variables" sid="8318441203759412" type="System" />
+                                <action id="-26" name="Restart layout" sid="1583568017374524" type="System" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="6385440046177438">
+                            <conditions>
+                                <condition id="1" name="On any touch end" sid="3222515531499408" type="Touch" />
+                                <condition id="3" name="Compare frame" sid="2065248673738843" type="SpriteLose">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3297386855217739" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-21" name="Reset global variables" sid="8979390161250485" type="System" />
+                                <action id="-26" name="Restart layout" sid="284213440079608" type="System" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7984638284420198">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9133696647138151" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3942419280128912">
+                            <conditions>
+                                <condition id="-3" name="Is on-screen" sid="2793431281082907" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="6444318175400282" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="3577187647606493">
                     <conditions>
                         <condition id="5" name="Is downloading update" sid="7616992987185691" type="Browser" />
@@ -167,7 +287,76 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="3772811212084449" title="Input">
+        <event-group collapsed="1" description="" sid="7458157205288591" title="Level">
+            <sub-events>
+                <event-block sid="1021449657218617">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6037516888355168" type="System">
+                            <param id="0" name="Interval (seconds)">1.5</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9823340892368746" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1130609712390408" type="System">
+                            <param id="0" name="Variable">PipeVariation</param>
+                            <param id="1" name="Value">floor(random(0, 3))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="946964343511743">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="942158525925632" type="System">
+                                    <param id="0" name="Variable">PipeVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="1949285894997946" type="Function">
+                                    <param id="0" name="Name">&quot;CreatePipeShort&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2545055694588506">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4062071642279066" type="System">
+                                    <param id="0" name="Variable">PipeVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="3250771551038721" type="Function">
+                                    <param id="0" name="Name">&quot;CreatePipeShortLong&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="307737187850125">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7088391592507287" type="System">
+                                    <param id="0" name="Variable">PipeVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="9929472602026067" type="Function">
+                                    <param id="0" name="Name">&quot;CreatePipeLongShort&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>
@@ -198,8 +387,14 @@
                         <condition id="0" name="On collision with another object" sid="3132819940199295" type="Player">
                             <param id="0" name="Object">Obstacle</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="5847632580319147" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="6005497092087538" type="Player" />
                         <action id="0" name="Call function" sid="178041177058847" type="Function">
                             <param id="0" name="Name">&quot;RestartGame&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -282,12 +477,26 @@
                 <event-block sid="5397070056044579">
                     <conditions>
                         <condition id="-4" name="Is outside layout" sid="8013627337455417" type="Player" />
+                        <condition id="-14" name="Compare variable" sid="484319153745511" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="3389945201934599" type="Player" />
                         <action id="0" name="Call function" sid="9207155476228784" type="Function">
                             <param id="0" name="Name">&quot;RestartGame&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3973222417520825">
+                    <conditions>
+                        <condition id="5" name="On any finished" sid="4874139858328296" type="Explosion" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1683923918621339" type="Explosion" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -301,8 +510,23 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-21" name="Reset global variables" sid="8302040859683901" type="System" />
-                        <action id="-26" name="Restart layout" sid="7188202352554799" type="System" />
+                        <action id="-3" name="Create object" sid="1879592134237341" type="System">
+                            <param id="0" name="Object to create">Explosion</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Player.X</param>
+                            <param id="3" name="Y">Player.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9745732425100549" type="System">
+                            <param id="0" name="Object to create">SpriteLose</param>
+                            <param id="1" name="Layer">&quot;UI&quot;</param>
+                            <param id="2" name="X">LayoutWidth / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 2</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="8274260564238357" type="SpriteLose" />
+                        <action id="-9" name="Set value" sid="1093236251606794" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="4019165628742884">
