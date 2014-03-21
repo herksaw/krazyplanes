@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.6c</version>
+    <version>0.0.1.7</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -39,7 +39,7 @@
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
-        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Loader style">Nothing (not recommended)</prop>
         <prop name="Orientations">Any</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D web</prop>
@@ -185,6 +185,9 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="BoxLoading" sid="6195769103182957">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families>

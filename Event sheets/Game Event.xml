@@ -83,6 +83,19 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="7233433639275308">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3496394987663529" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="5345150138974328" type="BoxVersion">
+                            <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9657534332213357" type="BoxScore">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; PlayerScore</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="6228974169092589">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="2611168484593639" type="System" />
