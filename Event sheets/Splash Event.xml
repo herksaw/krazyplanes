@@ -17,21 +17,11 @@
                     <param id="1" name="Type">0</param>
                     <param id="2" name="Tag">&quot;splash_timer&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="2195601830762651" type="BoxLoading">
-                    <param id="0" name="Family name">&quot;Conv_Comix Loud&quot;</param>
-                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="7186153113870328">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="1197803627398898" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="1" name="Append text" sid="4196760981421008" type="BoxLoading">
-                    <param id="0" name="Text">&quot;.&quot;</param>
+                <action id="-3" name="Create object" sid="4108668406953915" type="System">
+                    <param id="0" name="Object to create">LoadingDisc</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">LayoutWidth / 2</param>
+                    <param id="3" name="Y">LayoutHeight / 2</param>
                 </action>
             </actions>
         </event-block>
@@ -43,6 +33,7 @@
             </conditions>
             <actions>
                 <action behavior="Fade" id="1" name="Start fade" sid="5776474067308835" type="SplashScreen" />
+                <action behavior="Fade" id="1" name="Start fade" sid="4813814245655774" type="LoadingDisc" />
             </actions>
         </event-block>
         <event-block sid="2637600411239423">
@@ -51,6 +42,7 @@
             </conditions>
             <actions>
                 <action behavior="Fade" id="1" name="Start fade" sid="7350295952072681" type="SplashScreen" />
+                <action behavior="Fade" id="1" name="Start fade" sid="7266369005323904" type="LoadingDisc" />
             </actions>
         </event-block>
         <event-block sid="2744765439223553">
