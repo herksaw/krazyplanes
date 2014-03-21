@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.6b</version>
+    <version>0.0.1.6c</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -13,14 +13,14 @@
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -141,16 +141,10 @@
         <object-type name="BoxScore" sid="4708955069273212">
             <plugin id="Text" />
         </object-type>
-        <object-type name="SpriteIntro" sid="3660132389608035">
+        <object-type name="SpriteReady" sid="3660132389608035">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="6860128921636304">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3081869205948865" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3081869205948865" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -158,16 +152,10 @@
         <object-type name="TextBox" sid="378979246954202">
             <plugin id="Text" />
         </object-type>
-        <object-type name="SpriteLose" sid="5255525959173283">
+        <object-type name="SpriteGameover" sid="5255525959173283">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="2132037729910297">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="850991440331399" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="850991440331399" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -178,6 +166,22 @@
                 <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3597931961961861" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteGo" sid="111776131877481">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1433737097847874" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteStartagain" sid="5620779921210859">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3392052947052396" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -222,6 +226,19 @@
                 <member>PipeShort</member>
                 <member>PipeShortFlip</member>
             </members>
+        </family>
+        <family name="SpriteText" plugin-id="Sprite" sid="8676798926632455">
+            <members>
+                <member>SpriteGameover</member>
+                <member>SpriteGo</member>
+                <member>SpriteReady</member>
+                <member>SpriteStartagain</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Fade" sid="6882697113796519">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder expanded="1">

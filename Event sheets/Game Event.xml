@@ -71,13 +71,12 @@
                             <param id="0" name="Family name">&quot;Conv_Comix Loud&quot;</param>
                             <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                         </action>
-                        <action id="-3" name="Create object" sid="1963318082936362" type="System">
-                            <param id="0" name="Object to create">SpriteIntro</param>
+                        <action id="-3" name="Create object" sid="8126784698709779" type="System">
+                            <param id="0" name="Object to create">SpriteReady</param>
                             <param id="1" name="Layer">&quot;UI&quot;</param>
                             <param id="2" name="X">LayoutWidth / 2</param>
                             <param id="3" name="Y">LayoutHeight / 2</param>
                         </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="3744077129471544" type="SpriteIntro" />
                         <action id="-9" name="Set value" sid="9466876292500404" type="System">
                             <param id="0" name="Variable">isPaused</param>
                             <param id="1" name="Value">1</param>
@@ -130,73 +129,71 @@
                         </event-block>
                         <event-block sid="3204874702930825">
                             <conditions>
-                                <condition behavior="Fade" id="0" name="On fade out finished" sid="220138308016024" type="SpriteIntro" />
-                                <condition id="3" name="Compare frame" sid="8614571385794655" type="SpriteIntro">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">0</param>
-                                </condition>
+                                <condition id="-3" name="Is on-screen" sid="2316714334100923" type="SpriteReady" />
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="5372984543098871" type="SpriteIntro">
-                                    <param id="0" name="Frame number">1</param>
+                                <action behavior="Fade" id="1" name="Start fade" sid="3863834693560336" type="SpriteReady" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="5291087103886329">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="7491798954525376" type="SpriteReady" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="3079464356509357" type="System">
+                                    <param id="0" name="Object to create">SpriteGo</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action behavior="Fade" id="0" name="Restart fade" sid="4417883067178446" type="SpriteIntro" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="2561392491497759" type="SpriteGo" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="4280619865656552">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="9547664863974279" type="SpriteGo" />
+                            </conditions>
+                            <actions>
                                 <action id="-9" name="Set value" sid="6575124688491476" type="System">
                                     <param id="0" name="Variable">isPaused</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="5291087103886329">
-                            <conditions>
-                                <condition behavior="Fade" id="0" name="On fade out finished" sid="4070934939434496" type="SpriteIntro" />
-                                <condition id="3" name="Compare frame" sid="1996918370081364" type="SpriteIntro">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">1</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                        </event-block>
                         <event-block sid="7643867972621898">
                             <conditions>
-                                <condition behavior="Fade" id="0" name="On fade out finished" sid="3483066689672067" type="SpriteLose" />
-                                <condition id="3" name="Compare frame" sid="2978473582039436" type="SpriteLose">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">0</param>
-                                </condition>
+                                <condition id="-3" name="Is on-screen" sid="2978473582039436" type="SpriteGameover" />
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="2423150451860766" type="SpriteLose">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action behavior="Fade" id="0" name="Restart fade" sid="3799645931727575" type="SpriteLose" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="2423150451860766" type="SpriteGameover" />
                             </actions>
                         </event-block>
                         <event-block sid="3352638043631469">
                             <conditions>
-                                <condition behavior="Fade" id="0" name="On fade out finished" sid="6493026489168866" type="SpriteLose" />
-                                <condition id="3" name="Compare frame" sid="6515985557003201" type="SpriteLose">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">1</param>
-                                </condition>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="6515985557003201" type="SpriteGameover" />
                             </conditions>
                             <actions>
-                                <action id="-16" name="Wait" sid="2055097645984171" type="System">
-                                    <param id="0" name="Seconds">0.2</param>
+                                <action id="-3" name="Create object" sid="1963318082936362" type="System">
+                                    <param id="0" name="Object to create">SpriteStartagain</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="5282783424719867" type="SpriteLose">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action behavior="Fade" id="0" name="Restart fade" sid="6485200836550053" type="SpriteLose" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="5990864665097433" type="SpriteStartagain" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="323170631766548">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="8891493107639199" type="SpriteStartagain" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="4310729885709227" type="SpriteStartagain" />
                             </actions>
                         </event-block>
                         <event-block sid="4879757645231549">
                             <conditions>
                                 <condition id="1" name="On any key pressed" sid="2147628593218695" type="Keyboard" />
-                                <condition id="3" name="Compare frame" sid="317757612649701" type="SpriteLose">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">1</param>
-                                </condition>
+                                <condition id="-3" name="Is on-screen" sid="317757612649701" type="SpriteStartagain" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="9361805154570614" type="System">
@@ -210,10 +207,7 @@
                         <event-block sid="6385440046177438">
                             <conditions>
                                 <condition id="1" name="On any touch end" sid="3222515531499408" type="Touch" />
-                                <condition id="3" name="Compare frame" sid="2065248673738843" type="SpriteLose">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Number">1</param>
-                                </condition>
+                                <condition id="-3" name="Is on-screen" sid="2782721014443505" type="SpriteStartagain" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="3297386855217739" type="System">
@@ -515,12 +509,11 @@
                             <param id="3" name="Y">Player.Y</param>
                         </action>
                         <action id="-3" name="Create object" sid="9745732425100549" type="System">
-                            <param id="0" name="Object to create">SpriteLose</param>
+                            <param id="0" name="Object to create">SpriteGameover</param>
                             <param id="1" name="Layer">&quot;UI&quot;</param>
                             <param id="2" name="X">LayoutWidth / 2</param>
                             <param id="3" name="Y">LayoutHeight / 2</param>
                         </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="8274260564238357" type="SpriteLose" />
                         <action id="-9" name="Set value" sid="1093236251606794" type="System">
                             <param id="0" name="Variable">isPaused</param>
                             <param id="1" name="Value">1</param>

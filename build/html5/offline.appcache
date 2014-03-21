@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1395232339
+#1395381583
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -11,11 +11,13 @@ images\yellowplane-sheet1.png
 images\pipelongflip-sheet0.png
 images\pipeshortflip-sheet0.png
 images\splashscreen-sheet0.png
-images\spriteintro-sheet0.png
-images\spritelose-sheet0.png
+images\spriteready-sheet0.png
+images\spritegameover-sheet0.png
 images\explosion-sheet0.png
 images\explosion-sheet1.png
 images\explosion-sheet2.png
+images\spritego-sheet0.png
+images\spritestartagain-sheet0.png
 icon-16.png
 icon-32.png
 icon-114.png
