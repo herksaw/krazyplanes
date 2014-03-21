@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.7a</version>
+    <version>0.0.1.8</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -13,11 +13,13 @@
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
@@ -74,7 +76,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="YellowPlane" sid="3344237645055089">
+        <object-type name="Plane" sid="3344237645055089">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="5053048256077534" speed="0">
@@ -186,9 +188,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="BoxLoading" sid="6195769103182957">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="LoadingDisc" sid="945504303541957">
             <plugin id="Sprite" />
             <behaviors>
@@ -209,11 +208,84 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="ChooseRight" sid="6865820465065224">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4584435058993656" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChooseLeft" sid="2862751049020417">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6274531320492305" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChooseText" sid="3036390801411188">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3244144915651228" speed="5">
+                    <frame duration="1" hotspotX="0.500511" hotspotY="0.505263" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChoosePlane1" sid="2619556004364609">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7445389449185938" speed="0">
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChoosePlane2" sid="7373644755376903">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6204978213309477" speed="0">
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChoosePlane3" sid="379716107793134">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3071031255402489" speed="0">
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChoosePlane4" sid="2975327093303133">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4937940138154132" speed="0">
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonPlay" sid="4870896297548554">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3405143126125013" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="5134181287821099">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="BoxDebug" sid="3982092285859971">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
             <members>
-                <member>YellowPlane</member>
+                <member>Plane</member>
             </members>
             <instance-variables>
                 <instance-variable name="frame" sid="8975771689627949" type="number" />
@@ -263,14 +335,29 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="ChoosePlane" plugin-id="Sprite" sid="5391257812711098">
+            <members>
+                <member>ChoosePlane1</member>
+                <member>ChoosePlane2</member>
+                <member>ChoosePlane3</member>
+                <member>ChoosePlane4</member>
+            </members>
+            <behaviors>
+                <behavior-type name="8Direction" sid="6991602658571252">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
         <layout>Splash Layout.xml</layout>
+        <layout>Choose Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>
         <event-sheet>Splash Event.xml</event-sheet>
+        <event-sheet>Choose Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="4">
@@ -281,6 +368,7 @@
         <global-instance type="Keyboard" uid="5" />
         <global-instance type="Function" uid="7" />
         <global-instance type="Browser" uid="12" />
+        <global-instance type="Mouse" uid="31" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

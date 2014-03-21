@@ -146,7 +146,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="YellowPlane" uid="1">
+                <instance type="Plane" uid="1">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
