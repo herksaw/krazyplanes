@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.8</version>
+    <version>0.0.1.8a</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -62,7 +62,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9483712479441205" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.49863" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.501672" />
                 </animation>
             </animation-folder>
@@ -71,7 +71,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8492861326551939" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.49863" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -101,7 +101,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2501295807732895" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.50137" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -110,7 +110,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9029070330345367" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.50137" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.498328" />
                 </animation>
             </animation-folder>
