@@ -21,7 +21,13 @@
                     <param id="0" name="Object to create">LoadingDisc</param>
                     <param id="1" name="Layer">&quot;Background&quot;</param>
                     <param id="2" name="X">LayoutWidth / 2</param>
-                    <param id="3" name="Y">LayoutHeight / 2</param>
+                    <param id="3" name="Y">LayoutHeight / 3</param>
+                </action>
+                <action id="-3" name="Create object" sid="4781728198693714" type="System">
+                    <param id="0" name="Object to create">LoadingText</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">LayoutWidth / 2</param>
+                    <param id="3" name="Y">LayoutHeight * 3 / 4</param>
                 </action>
             </actions>
         </event-block>
@@ -32,8 +38,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Fade" id="1" name="Start fade" sid="5776474067308835" type="SplashScreen" />
-                <action behavior="Fade" id="1" name="Start fade" sid="4813814245655774" type="LoadingDisc" />
+                <action behavior="Fade" id="1" name="Start fade" sid="9748503855468831" type="Loading" />
             </actions>
         </event-block>
         <event-block sid="2637600411239423">
@@ -41,8 +46,7 @@
                 <condition id="1" name="On any key pressed" sid="8007705479787504" type="Keyboard" />
             </conditions>
             <actions>
-                <action behavior="Fade" id="1" name="Start fade" sid="7350295952072681" type="SplashScreen" />
-                <action behavior="Fade" id="1" name="Start fade" sid="7266369005323904" type="LoadingDisc" />
+                <action behavior="Fade" id="1" name="Start fade" sid="8811440186734487" type="Loading" />
             </actions>
         </event-block>
         <event-block sid="2744765439223553">
@@ -50,12 +54,12 @@
                 <condition id="1" name="On any touch end" sid="4520951387722214" type="Touch" />
             </conditions>
             <actions>
-                <action behavior="Fade" id="1" name="Start fade" sid="9894427567786718" type="SplashScreen" />
+                <action behavior="Fade" id="1" name="Start fade" sid="5996588446624471" type="Loading" />
             </actions>
         </event-block>
         <event-block sid="1715699734006738">
             <conditions>
-                <condition behavior="Fade" id="0" name="On fade out finished" sid="2384983304157243" type="SplashScreen" />
+                <condition behavior="Fade" id="0" name="On fade out finished" sid="8978628538161146" type="Loading" />
             </conditions>
             <actions>
                 <action id="-28" name="Set canvas size" sid="6192385964354714" type="System">

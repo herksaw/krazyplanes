@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.8d</version>
+    <version>0.0.2.1</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -11,6 +11,7 @@
     <saved-with-version>15600</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="CJSAds" version="1">CocoonJS</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -50,7 +51,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-type name="City" sid="2540268265803557">
+        <object-type name="BackgroundCity" sid="2540268265803557">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3979480267196833" speed="5">
@@ -121,9 +122,6 @@
                 <behavior-type name="Timer" sid="8731066911831745">
                     <behavior id="Timer" />
                 </behavior-type>
-                <behavior-type name="Fade" sid="5447916190947021">
-                    <behavior id="Fade" />
-                </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2288608948445495" speed="5">
@@ -190,11 +188,6 @@
         </object-type>
         <object-type name="LoadingDisc" sid="945504303541957">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="4650917047393071">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="8" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6592647577205851" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -289,6 +282,49 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="CocoonJS" sid="9457474930713783">
+            <plugin id="CJSAds" />
+        </object-type>
+        <object-type name="BackgroundNight" sid="4973301124645136">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9166819358081713" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BackgroundVolcano" sid="9130234273535817">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2062580135059988" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BackgroundSpace" sid="5088900726822664">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2000201199209707" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ItemBackground" sid="1814767406281908">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1530658604001557" speed="5">
+                    <frame duration="1" hotspotX="0.50289" hotspotY="0.501945" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LoadingText" sid="7600525279559994">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5974595656973235" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503311" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
@@ -306,8 +342,19 @@
         </family>
         <family name="Background" plugin-id="Sprite" sid="2878442006477175">
             <members>
-                <member>City</member>
+                <member>BackgroundCity</member>
+                <member>BackgroundNight</member>
+                <member>BackgroundSpace</member>
+                <member>BackgroundVolcano</member>
             </members>
+            <instance-variables>
+                <instance-variable name="timer" sid="2480381055210354" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="6873003361363478">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
         </family>
         <family name="Obstacle" plugin-id="Sprite" sid="4039918996126425">
             <members>
@@ -324,6 +371,7 @@
         </family>
         <family name="Object" plugin-id="Sprite" sid="8390661123987275">
             <members>
+                <member>ItemBackground</member>
                 <member>PipeLong</member>
                 <member>PipeLongFlip</member>
                 <member>PipeShort</member>
@@ -357,6 +405,32 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="Item" plugin-id="Sprite" sid="5371810597555663">
+            <members>
+                <member>ItemBackground</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="direction" sid="753439486397317" type="number" />
+                <instance-variable name="timer" sid="5715260410648573" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="3647131845499044">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Loading" plugin-id="Sprite" sid="585546983383917">
+            <members>
+                <member>LoadingDisc</member>
+                <member>LoadingText</member>
+                <member>SplashScreen</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Fade" sid="6670126753958706">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
@@ -378,6 +452,12 @@
         <global-instance type="Function" uid="7" />
         <global-instance type="Browser" uid="12" />
         <global-instance type="Mouse" uid="31" />
+        <global-instance type="CocoonJS" uid="34">
+            <properties>
+                <store-mode>Managed</store-mode>
+                <store-sandbox>Enabled</store-sandbox>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

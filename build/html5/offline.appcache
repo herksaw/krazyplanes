@@ -1,9 +1,9 @@
 ﻿CACHE MANIFEST
-#1396056702
+#1396101681
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
-images\city-sheet0.png
+images\backgroundcity-sheet0.png
 images\pipeshort-sheet0.png
 images\pipelong-sheet0.png
 images\plane-sheet0.png
@@ -29,6 +29,11 @@ images\chooseplane3-sheet0.png
 images\chooseplane4-sheet0.png
 images\buttonplay-sheet0.png
 images\spritesteady-sheet0.png
+images\backgroundnight-sheet0.png
+images\backgroundvolcano-sheet0.png
+images\backgroundspace-sheet0.png
+images\itembackground-sheet0.png
+images\loadingtext-sheet0.png
 icon-16.png
 icon-32.png
 icon-114.png
