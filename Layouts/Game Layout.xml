@@ -109,7 +109,7 @@
                         <y>553</y>
                         <z>0</z>
                         <width>90.927833557</width>
-                        <height>304.347808838</height>
+                        <height>278.26083374</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -138,7 +138,7 @@
                         <y>588</y>
                         <z>0</z>
                         <width>90.927833557</width>
-                        <height>341.708526611</height>
+                        <height>324.623077393</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -206,7 +206,7 @@
                         <y>142</y>
                         <z>0</z>
                         <width>90.927833557</width>
-                        <height>341.708526611</height>
+                        <height>324.623077393</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -235,7 +235,7 @@
                         <y>150</y>
                         <z>0</z>
                         <width>90.927833557</width>
-                        <height>313.043457031</height>
+                        <height>278.26083374</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -324,6 +324,39 @@
                         <z>0</z>
                         <width>780</width>
                         <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SpriteSteady" uid="33">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1564</x>
+                        <y>983</y>
+                        <z>0</z>
+                        <width>650</width>
+                        <height>150</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -450,8 +483,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>956</x>
-                        <y>984</y>
+                        <x>934</x>
+                        <y>982</y>
                         <z>0</z>
                         <width>650</width>
                         <height>150</height>

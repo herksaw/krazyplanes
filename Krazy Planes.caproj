@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.1.8a</version>
+    <version>0.0.1.8d</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -281,6 +281,14 @@
         <object-type name="BoxDebug" sid="3982092285859971">
             <plugin id="Text" />
         </object-type>
+        <object-type name="SpriteSteady" sid="3963559921491418">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1842150455734243" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
@@ -328,6 +336,7 @@
                 <member>SpriteGo</member>
                 <member>SpriteReady</member>
                 <member>SpriteStartagain</member>
+                <member>SpriteSteady</member>
             </members>
             <behaviors>
                 <behavior-type name="Fade" sid="6882697113796519">

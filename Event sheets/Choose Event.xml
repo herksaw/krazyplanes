@@ -4,7 +4,7 @@
     <name>Choose Event</name>
     <events>
         <variable constant="0" name="ChosenPlane" sid="3653101471500186" static="0" type="number">0</variable>
-        <variable constant="0" name="is2Unlocked" sid="7527535077381872" static="0" type="number">1</variable>
+        <variable constant="0" name="is2Unlocked" sid="7527535077381872" static="0" type="number">0</variable>
         <variable constant="0" name="is3Unlocked" sid="4732607278837842" static="0" type="number">0</variable>
         <variable constant="0" name="is4Unlocked" sid="6007096538751151" static="0" type="number">0</variable>
         <event-block sid="2786067727948455">

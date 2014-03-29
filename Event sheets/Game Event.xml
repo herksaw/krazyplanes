@@ -34,7 +34,7 @@
                             <param id="0" name="Object to create">SpriteReady</param>
                             <param id="1" name="Layer">&quot;UI&quot;</param>
                             <param id="2" name="X">LayoutWidth / 2</param>
-                            <param id="3" name="Y">LayoutHeight / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 4</param>
                         </action>
                         <action id="-9" name="Set value" sid="9466876292500404" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -116,12 +116,26 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="3079464356509357" type="System">
+                                    <param id="0" name="Object to create">SpriteSteady</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="3" name="Y">LayoutHeight * 3 / 4</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="2561392491497759" type="SpriteSteady" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="7442381005627779">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade out finished" sid="5562486793156744" type="SpriteSteady" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="4063865313102466" type="System">
                                     <param id="0" name="Object to create">SpriteGo</param>
                                     <param id="1" name="Layer">&quot;UI&quot;</param>
                                     <param id="2" name="X">LayoutWidth / 2</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action behavior="Fade" id="1" name="Start fade" sid="2561392491497759" type="SpriteGo" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="9003165057253807" type="SpriteGo" />
                             </actions>
                         </event-block>
                         <event-block sid="4280619865656552">
@@ -323,7 +337,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
+        <event-group description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>
@@ -505,13 +519,13 @@
                         <action id="-3" name="Create object" sid="2005783568887901" type="System">
                             <param id="0" name="Object to create">PipeShort</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 200</param>
+                            <param id="2" name="X">LayoutWidth + random(200, 400)</param>
                             <param id="3" name="Y">PipeShort.Height / 2</param>
                         </action>
                         <action id="-3" name="Create object" sid="9735506331020326" type="System">
                             <param id="0" name="Object to create">PipeShortFlip</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 200</param>
+                            <param id="2" name="X">PipeShort.X</param>
                             <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
                         </action>
                     </actions>
@@ -526,13 +540,13 @@
                         <action id="-3" name="Create object" sid="1208989904484169" type="System">
                             <param id="0" name="Object to create">PipeShort</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 200</param>
+                            <param id="2" name="X">LayoutWidth + random(200, 400)</param>
                             <param id="3" name="Y">PipeShort.Height / 2</param>
                         </action>
                         <action id="-3" name="Create object" sid="7069781424687582" type="System">
                             <param id="0" name="Object to create">PipeLongFlip</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 200</param>
+                            <param id="2" name="X">PipeShort.X</param>
                             <param id="3" name="Y">LayoutHeight - (PipeLongFlip.Height / 2)</param>
                         </action>
                     </actions>
@@ -547,13 +561,13 @@
                         <action id="-3" name="Create object" sid="1394473672422936" type="System">
                             <param id="0" name="Object to create">PipeLong</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 200</param>
+                            <param id="2" name="X">LayoutWidth + random(200, 400)</param>
                             <param id="3" name="Y">PipeLong.Height / 2</param>
                         </action>
                         <action id="-3" name="Create object" sid="645936157675272" type="System">
                             <param id="0" name="Object to create">PipeShortFlip</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 200</param>
+                            <param id="2" name="X">PipeLong.X</param>
                             <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
                         </action>
                     </actions>
