@@ -7,12 +7,6 @@
         <variable constant="0" name="is2Unlocked" sid="7527535077381872" static="0" type="number">0</variable>
         <variable constant="0" name="is3Unlocked" sid="4732607278837842" static="0" type="number">0</variable>
         <variable constant="0" name="is4Unlocked" sid="6007096538751151" static="0" type="number">0</variable>
-        <event-block sid="2786067727948455">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="8790164902543896" type="System" />
-            </conditions>
-            <actions />
-        </event-block>
         <event-block sid="2732210742578333">
             <conditions>
                 <condition id="-3" name="Is on-screen" sid="6686216327093555" type="ChoosePlane" />
@@ -23,7 +17,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="3272758662718585">
+        <event-block collapsed="1" sid="3272758662718585">
             <conditions>
                 <condition id="-20" name="Is on mobile device" sid="6041791145685216" type="System" />
             </conditions>
@@ -148,7 +142,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="3273565544309718">
+        <event-block collapsed="1" sid="3273565544309718">
             <conditions>
                 <condition id="-22" name="Else" sid="7723992673514542" type="System" />
             </conditions>

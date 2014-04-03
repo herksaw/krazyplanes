@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1396101681
+#1396535333
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -10,7 +10,6 @@ images\plane-sheet0.png
 images\plane-sheet1.png
 images\pipelongflip-sheet0.png
 images\pipeshortflip-sheet0.png
-images\splashscreen-sheet0.png
 images\spriteready-sheet0.png
 images\spritegameover-sheet0.png
 images\explosion-sheet0.png
@@ -34,6 +33,9 @@ images\backgroundvolcano-sheet0.png
 images\backgroundspace-sheet0.png
 images\itembackground-sheet0.png
 images\loadingtext-sheet0.png
+images\loginanonymous-sheet0.png
+images\loginfacebook-sheet0.png
+images\logintext-sheet0.png
 icon-16.png
 icon-32.png
 icon-114.png
@@ -46,5 +48,6 @@ comix%20loud.svg
 comix%20loud.ttf
 comix%20loud.woff
 stylesheet.css
+channel.html
 NETWORK:
 *

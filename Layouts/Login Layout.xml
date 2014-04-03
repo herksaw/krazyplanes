@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Splash Layout</name>
-    <sid>1296177331487665</sid>
-    <event-sheet>Splash Event</event-sheet>
+    <name>Login Layout</name>
+    <sid>4443317344136633</sid>
+    <event-sheet>Login Event</event-sheet>
     <size>
         <width>1366</width>
         <height>768</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Background" sid="4313054528121844">
+        <layer name="Game" sid="499079362521426">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -27,7 +27,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="SplashScreen" uid="10">
+                <instance type="SplashScreen" uid="44">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -50,7 +50,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>683</x>
-                        <y>383.000030518</y>
+                        <y>384</y>
                         <z>0</z>
                         <width>1366</width>
                         <height>768</height>
@@ -61,68 +61,68 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="LoadingDisc" uid="22">
+                <instance type="LoginAnonymous" uid="41">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>484</x>
-                        <y>-224</y>
+                        <x>683</x>
+                        <y>550</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
+                        <width>408</width>
+                        <height>221</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.502262473</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="LoadingText" uid="39">
+                <instance type="LoginFacebook" uid="43">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>48</x>
-                        <y>-208</y>
+                        <x>683</x>
+                        <y>300</y>
                         <z>0</z>
-                        <width>532</width>
-                        <height>151</height>
+                        <width>606</width>
+                        <height>115</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.503311276</hotspotY>
+                        <hotspotY>0.504347801</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="LoginText" uid="45">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>683.5</x>
+                        <y>100</y>
+                        <z>0</z>
+                        <width>237</width>
+                        <height>77</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502109706</hotspotX>
+                        <hotspotY>0.506493509</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

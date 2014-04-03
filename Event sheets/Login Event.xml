@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Login Event</name>
+    <events>
+        <variable constant="0" name="TempFacebookLogin" sid="4965226996531984" static="0" type="number">0</variable>
+        <event-block sid="3136319168824819">
+            <conditions>
+                <condition id="1" name="Is online" sid="1048910425634299" type="Browser" />
+                <condition id="0" name="Is ready" sid="9663381654344191" type="Facebook" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1821813046095526">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="7702761107238499" type="Touch">
+                            <param id="0" name="Object">LoginFacebook</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Log in" sid="2859570015761176" type="Facebook">
+                            <param id="0" name="Stream permission">0</param>
+                            <param id="1" name="Action permission">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4174265439784959" type="System">
+                            <param id="0" name="Variable">TempFacebookLogin</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7921894625647474">
+                    <conditions>
+                        <condition id="1" name="Is user logged in" sid="381806996038789" type="Facebook" />
+                        <condition id="-14" name="Compare variable" sid="2977176771398845" type="System">
+                            <param id="0" name="Variable">TempFacebookLogin</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="4795996398613795" type="WebStorage">
+                            <param id="0" name="Key">&quot;facebook&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4012472124343109" type="System">
+                            <param id="0" name="Variable">TempFacebookLogin</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="1026161752614607" type="System">
+                            <param id="0" name="Layout">Choose Layout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7837925047513555">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4287720143656403" type="Touch">
+                    <param id="0" name="Object">LoginAnonymous</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="436177102197888" type="WebStorage">
+                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                    <param id="1" name="Value">&quot;false&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="3743367176989398" type="System">
+                    <param id="0" name="Layout">Choose Layout</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

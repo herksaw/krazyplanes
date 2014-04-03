@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="isPlayerDied" sid="4191923731652028" static="0" type="number">0</variable>
+        <variable constant="0" name="IsLeaderboard" sid="4847377864471878" static="0" type="number">0</variable>
         <variable constant="0" name="ScoreUnit" sid="196260553137451" static="0" type="number">1</variable>
         <variable constant="0" name="IsItemBackground" sid="3994101323542543" static="0" type="number">0</variable>
         <variable constant="0" name="IsBonusLevel" sid="9971066634741977" static="0" type="number">0</variable>
@@ -105,6 +107,16 @@
                             </conditions>
                             <actions>
                                 <action behavior="Platform" id="11" name="Set enabled" sid="2268691718794661" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9417366483314481">
+                            <conditions>
+                                <condition id="-3" name="Is on-screen" sid="5018475495459272" type="Item" />
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="1846300260161154" type="Item">
                                     <param id="0" name="State">0</param>
                                 </action>
                             </actions>
@@ -216,7 +228,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7984638284420198">
+                <event-block sid="7984638284420198">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9133696647138151" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -232,6 +244,16 @@
                             </conditions>
                             <actions>
                                 <action behavior="Platform" id="11" name="Set enabled" sid="6444318175400282" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7276645413898618">
+                            <conditions>
+                                <condition id="-3" name="Is on-screen" sid="4692925830526881" type="Item" />
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="3195844918703794" type="Item">
                                     <param id="0" name="State">1</param>
                                 </action>
                             </actions>
@@ -275,7 +297,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="7458157205288591" title="Level">
+        <event-group collapsed="1" description="" sid="7458157205288591" title="Level">
             <sub-events>
                 <event-block sid="6308218700820113">
                     <conditions>
@@ -706,7 +728,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
+        <event-group description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>
@@ -718,19 +740,36 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3063659806222342">
+                <event-block sid="6743464553815323">
                     <conditions>
-                        <condition id="1" name="On any touch end" sid="8293828217964896" type="Touch" />
+                        <condition id="1" name="On any touch end" sid="3088659446496117" type="Touch" />
                     </conditions>
                     <actions>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="3293687871818429" type="Player">
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="5606101873572429" type="Player">
                             <param id="0" name="Vector Y">-400</param>
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="3229894433523051">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="4478313978012859" type="Touch" />
+                        <condition id="-14" name="Compare variable" sid="5397599070933883" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9416916786740836" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="5" name="Hide Leaderboard" sid="6693802346252535" type="Clayio" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5625581531054905" title="Collision">
+        <event-group collapsed="1" description="" sid="5625581531054905" title="Collision">
             <sub-events>
                 <event-block sid="6229384262465646">
                     <conditions>
@@ -744,9 +783,37 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="2277081850083133" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5566706335389822" type="System">
+                            <param id="0" name="Variable">isPlayerDied</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="6005497092087538" type="Player" />
-                        <action id="0" name="Call function" sid="178041177058847" type="Function">
-                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                        <action id="-3" name="Create object" sid="5913473613771711" type="System">
+                            <param id="0" name="Object to create">Explosion</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Player.X</param>
+                            <param id="3" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7197433421794503">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="2960565266942846" type="Explosion">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9613931614870779" type="System">
+                            <param id="0" name="Variable">isPlayerDied</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="3157357833681422" type="Function">
+                            <param id="0" name="Name">&quot;StartLeaderboard&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
@@ -853,10 +920,20 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="9905992039531019" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2065415480077614" type="System">
+                            <param id="0" name="Variable">isPlayerDied</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="3389945201934599" type="Player" />
-                        <action id="0" name="Call function" sid="9207155476228784" type="Function">
-                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
+                        <action id="-3" name="Create object" sid="5891368703222606" type="System">
+                            <param id="0" name="Object to create">Explosion</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Player.X</param>
+                            <param id="3" name="Y">Player.Y</param>
                         </action>
                     </actions>
                 </event-block>
@@ -870,32 +947,64 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="4233841121576778" title="Function">
+        <event-group description="" sid="4233841121576778" title="Function">
             <sub-events>
-                <event-block sid="2815051232267765">
+                <event-block sid="7105819477388895">
                     <conditions>
-                        <condition id="0" name="On function" sid="8190100091631277" type="Function">
-                            <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                        <condition id="0" name="On function" sid="157177591988215" type="Function">
+                            <param id="0" name="Name">&quot;StartLeaderboard&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="1879592134237341" type="System">
-                            <param id="0" name="Object to create">Explosion</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">Player.X</param>
-                            <param id="3" name="Y">Player.Y</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="9745732425100549" type="System">
-                            <param id="0" name="Object to create">SpriteGameover</param>
-                            <param id="1" name="Layer">&quot;UI&quot;</param>
-                            <param id="2" name="X">LayoutWidth / 2</param>
-                            <param id="3" name="Y">LayoutHeight / 2</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="1093236251606794" type="System">
+                        <action id="-9" name="Set value" sid="8597593476890283" type="System">
                             <param id="0" name="Variable">isPaused</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="9677826562587997">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1166669242067772" type="System">
+                                    <param id="0" name="Variable">IsLeaderboard</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="6" name="Compare key value (as text)" sid="1202311187512446" type="WebStorage">
+                                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Post Leaderboard Score" sid="778721686186452" type="Clayio">
+                                    <param id="0" name="Player Name">Facebook.FullName</param>
+                                    <param id="1" name="Player Score">PlayerScore</param>
+                                    <param id="2" name="Leaderboard ID">3591</param>
+                                    <param id="3" name="Show Notification">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6416565365629576">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9041574396289091" type="System">
+                                    <param id="0" name="Variable">IsLeaderboard</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="6" name="Compare key value (as text)" sid="1927931539191554" type="WebStorage">
+                                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;false&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7129690736178202" type="System">
+                                    <param id="0" name="Variable">IsLeaderboard</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="4019165628742884">
                     <conditions>
@@ -960,7 +1069,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6164506612555976">
+                <event-block collapsed="1" sid="6164506612555976">
                     <conditions>
                         <condition id="0" name="On function" sid="5672741977370417" type="Function">
                             <param id="0" name="Name">&quot;MoveItem&quot;</param>
@@ -1112,6 +1221,76 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block collapsed="1" disabled="1" sid="6226074112311384">
+                    <conditions>
+                        <condition id="1" name="Is in CocoonJS" sid="7453782207507713" type="CocoonJS" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6347876094407514">
+                            <conditions>
+                                <condition id="13" name="Is available" sid="1524052945311385" type="CocoonJS" />
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Request login" sid="2455183863579666" type="CocoonJS" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="9376279632494581">
+                            <conditions>
+                                <condition id="14" name="Is logged in" sid="5186788654416859" type="CocoonJS" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Submit score" sid="8018335966570017" type="CocoonJS">
+                                    <param id="0" name="Score">PlayerScore</param>
+                                    <param id="1" name="Leaderboard">&quot;Krazy Planes&quot;</param>
+                                </action>
+                                <action id="13" name="Open leaderboard view" sid="7160990347270182" type="CocoonJS">
+                                    <param id="0" name="Leaderboard">&quot;Krazy Planes&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7529324210126114">
+                    <conditions>
+                        <condition id="1" name="Leaderboard Score Posted" sid="2964388258425168" type="Clayio" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6041773629854459" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Show Leaderboard" sid="3307333268714939" type="Clayio">
+                            <param id="0" name="Leaderboard ID">3591</param>
+                            <param id="1" name="Time Frame">0</param>
+                            <param id="2" name="High Score">0</param>
+                            <param id="3" name="Sort">0</param>
+                            <param id="4" name="Scores From">0</param>
+                            <param id="5" name="Number of Scores">200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3742232046653902">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9592072398812176" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1477316581116771" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9273135135497472" type="System">
+                            <param id="0" name="Object to create">SpriteGameover</param>
+                            <param id="1" name="Layer">&quot;UI&quot;</param>
+                            <param id="2" name="X">LayoutWidth / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 2</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
