@@ -2,13 +2,13 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.2.4</version>
+    <version>0.0.2.9</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
     <app-id>com.chetandavdra.krazyplanes</app-id>
     <unique-id>7p7e95bnd7ze</unique-id>
-    <saved-with-version>15600</saved-with-version>
+    <saved-with-version>16500</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="CJSAds" version="1">CocoonJS</plugin>
@@ -58,23 +58,25 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3979480267196833" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500185" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="PipeShort" sid="24696104139148">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9483712479441205" speed="0">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9483712479441205" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.501672" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="PipeLong" sid="9858196522450527">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8492861326551939" speed="0">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8492861326551939" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
@@ -83,8 +85,7 @@
         <object-type name="Plane" sid="3344237645055089">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="5053048256077534" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="5053048256077534" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -104,7 +105,8 @@
         <object-type name="PipeLongFlip" sid="3369794465903571">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2501295807732895" speed="0">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2501295807732895" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
@@ -113,9 +115,10 @@
         <object-type name="PipeShortFlip" sid="3257600284686128">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9029070330345367" speed="0">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9029070330345367" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.498328" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -240,8 +243,8 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6204978213309477" speed="0">
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500935" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500935" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -292,7 +295,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9166819358081713" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500185" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -300,7 +303,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2062580135059988" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.500185" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -361,6 +364,38 @@
         <object-type name="WebStorage" sid="3987505423383155">
             <plugin id="WebStorage" />
         </object-type>
+        <object-type name="ScoresText" sid="284692843514701">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2517650692427744" speed="5">
+                    <frame duration="1" hotspotX="0.501205" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Planet1" sid="8914245794695373">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6958580024634892" speed="5">
+                    <frame duration="1" hotspotX="0.502392" hotspotY="0.502392" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Planet2" sid="6174408210029183">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7497577889075065" speed="5">
+                    <frame duration="1" hotspotX="0.502392" hotspotY="0.502392" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Planet3" sid="8710450125461512">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7612162110153114" speed="5">
+                    <frame duration="1" hotspotX="0.501449" hotspotY="0.502825" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
@@ -412,6 +447,9 @@
                 <member>PipeLongFlip</member>
                 <member>PipeShort</member>
                 <member>PipeShortFlip</member>
+                <member>Planet1</member>
+                <member>Planet2</member>
+                <member>Planet3</member>
             </members>
         </family>
         <family name="SpriteText" plugin-id="Sprite" sid="8676798926632455">
@@ -466,6 +504,13 @@
                     <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="Planet" plugin-id="Sprite" sid="7249322907168473">
+            <members>
+                <member>Planet1</member>
+                <member>Planet2</member>
+                <member>Planet3</member>
+            </members>
         </family>
     </families>
     <layout-folder expanded="1">

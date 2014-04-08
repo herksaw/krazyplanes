@@ -12,8 +12,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout>Game Layout</layout>
         <layout>Login Layout</layout>
-        <layout>Splash Layout</layout>
         <event-sheet active="1">Game Event</event-sheet>
+        <event-sheet>Splash Event</event-sheet>
         <event-sheet>Login Event</event-sheet>
     </open-tabs>
     <properties>
@@ -31,5 +31,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="ChoosePlane" />
         <family expanded="0" name="Item" />
         <family expanded="0" name="Loading" />
+        <family expanded="0" name="Planet" />
     </families-expanded>
 </c2uistate>

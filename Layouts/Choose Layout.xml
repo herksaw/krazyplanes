@@ -54,10 +54,10 @@
                         <x>683</x>
                         <y>384</y>
                         <z>0</z>
-                        <width>1366</width>
+                        <width>2705</width>
                         <height>768</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.500184834</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -207,10 +207,10 @@
                         <x>1716.5</x>
                         <y>369</y>
                         <z>0</z>
-                        <width>555</width>
-                        <height>404</height>
+                        <width>535</width>
+                        <height>398</height>
                         <depth>0</depth>
-                        <hotspotX>0.500900924</hotspotX>
+                        <hotspotX>0.500934601</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>

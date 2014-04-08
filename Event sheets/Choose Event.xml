@@ -7,7 +7,7 @@
         <variable constant="0" name="is2Unlocked" sid="7527535077381872" static="0" type="number">0</variable>
         <variable constant="0" name="is3Unlocked" sid="4732607278837842" static="0" type="number">0</variable>
         <variable constant="0" name="is4Unlocked" sid="6007096538751151" static="0" type="number">0</variable>
-        <event-block sid="2732210742578333">
+        <event-block disabled="1" sid="2732210742578333">
             <conditions>
                 <condition id="-3" name="Is on-screen" sid="6686216327093555" type="ChoosePlane" />
             </conditions>
@@ -17,13 +17,13 @@
                 </action>
             </actions>
         </event-block>
-        <event-block collapsed="1" sid="3272758662718585">
+        <event-block collapsed="1" disabled="1" sid="3272758662718585">
             <conditions>
                 <condition id="-20" name="Is on mobile device" sid="6041791145685216" type="System" />
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="8174020845546809">
+                <event-block disabled="1" sid="8174020845546809">
                     <conditions>
                         <condition id="3" name="On touched object" sid="807298320649563" type="Touch">
                             <param id="0" name="Object">ChooseRight</param>
@@ -41,7 +41,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3819376528704412">
+                <event-block disabled="1" sid="3819376528704412">
                     <conditions>
                         <condition id="3" name="On touched object" sid="8986377817106091" type="Touch">
                             <param id="0" name="Object">ChooseLeft</param>
@@ -59,7 +59,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="4561841583930805">
+                <event-block disabled="1" sid="4561841583930805">
                     <conditions>
                         <condition id="3" name="On touched object" sid="4524590425456227" type="Touch">
                             <param id="0" name="Object">ButtonPlay</param>
@@ -67,7 +67,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="7461601269872311">
+                        <event-block disabled="1" sid="7461601269872311">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="4307332539773389" type="ChoosePlane1" />
                             </conditions>
@@ -81,7 +81,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9255522005140397">
+                        <event-block disabled="1" sid="9255522005140397">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="8612570725835704" type="ChoosePlane2" />
                                 <condition id="-14" name="Compare variable" sid="3530183849481688" type="System">
@@ -100,7 +100,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="1304272042204566">
+                        <event-block disabled="1" sid="1304272042204566">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="9226843461267482" type="ChoosePlane3" />
                                 <condition id="-14" name="Compare variable" sid="708693365605476" type="System">
@@ -119,7 +119,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="1525047601568629">
+                        <event-block disabled="1" sid="1525047601568629">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="8670632908655628" type="ChoosePlane4" />
                                 <condition id="-14" name="Compare variable" sid="7331235680559236" type="System">
@@ -142,13 +142,13 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block collapsed="1" sid="3273565544309718">
+        <event-block collapsed="1" disabled="1" sid="3273565544309718">
             <conditions>
                 <condition id="-22" name="Else" sid="7723992673514542" type="System" />
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="8382526144735931">
+                <event-block disabled="1" sid="8382526144735931">
                     <conditions>
                         <condition id="6" name="On object clicked" sid="5564697670841695" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
@@ -168,7 +168,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5935362036856969">
+                <event-block disabled="1" sid="5935362036856969">
                     <conditions>
                         <condition id="6" name="On object clicked" sid="779490833144718" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
@@ -188,7 +188,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6632654797840284">
+                <event-block disabled="1" sid="6632654797840284">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="3352575901409409" type="Keyboard">
                             <param id="0" name="Key">39 (Right arrow)</param>
@@ -207,7 +207,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="9983468189386003">
+                <event-block disabled="1" sid="9983468189386003">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="7230136030720905" type="Keyboard">
                             <param id="0" name="Key">37 (Left arrow)</param>
@@ -226,7 +226,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3035158652290815">
+                <event-block disabled="1" sid="3035158652290815">
                     <conditions>
                         <condition id="6" name="On object clicked" sid="3995952935970515" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
@@ -236,7 +236,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="1209435907880066">
+                        <event-block disabled="1" sid="1209435907880066">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="8509126930195742" type="ChoosePlane1" />
                             </conditions>
@@ -250,7 +250,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9698388045371104">
+                        <event-block disabled="1" sid="9698388045371104">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="4203774708388292" type="ChoosePlane2" />
                                 <condition id="-14" name="Compare variable" sid="1182731531393422" type="System">
@@ -269,7 +269,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="7375881968989383">
+                        <event-block disabled="1" sid="7375881968989383">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="2883855849064223" type="ChoosePlane3" />
                                 <condition id="-14" name="Compare variable" sid="9548894436299159" type="System">
@@ -288,7 +288,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="5715072907286874">
+                        <event-block disabled="1" sid="5715072907286874">
                             <conditions>
                                 <condition id="-3" name="Is on-screen" sid="9313488735330248" type="ChoosePlane4" />
                                 <condition id="-14" name="Compare variable" sid="3649011040691923" type="System">
@@ -311,7 +311,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="1207024854075894">
+        <event-block disabled="1" sid="1207024854075894">
             <conditions>
                 <condition id="-3" name="Is on-screen" sid="7550289322610037" type="ChoosePlane" />
                 <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5141658665815417" type="ChoosePlane" />
@@ -322,7 +322,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="4650595061798251">
+        <event-block disabled="1" sid="4650595061798251">
             <conditions>
                 <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="1444881155139449" type="ChoosePlane" />
             </conditions>
@@ -335,7 +335,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="2798413913385896">
+        <event-block disabled="1" sid="2798413913385896">
             <conditions>
                 <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5129578481873706" type="ChoosePlane" />
             </conditions>
@@ -348,7 +348,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1562079890147288">
+        <event-block disabled="1" sid="1562079890147288">
             <conditions>
                 <condition id="-4" name="Is outside layout" sid="9144231082783563" type="ChoosePlane1" />
                 <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5843935672827131" type="ChoosePlane" />
@@ -359,7 +359,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="2528991411124244">
+        <event-block disabled="1" sid="2528991411124244">
             <conditions>
                 <condition id="-3" name="Is on-screen" sid="1545605137376347" type="ChoosePlane1" />
             </conditions>
@@ -369,7 +369,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="3254386939889265">
+        <event-block disabled="1" sid="3254386939889265">
             <conditions>
                 <condition id="-3" name="Is on-screen" sid="4895771273227862" type="ChoosePlane4" />
             </conditions>
@@ -379,7 +379,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="8947429499761366">
+        <event-block disabled="1" sid="8947429499761366">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="9944390774103956" type="System">
                     <param id="0" name="Variable">is2Unlocked</param>
@@ -393,7 +393,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="2740022217150345">
+        <event-block disabled="1" sid="2740022217150345">
             <conditions>
                 <condition id="-22" name="Else" sid="8365002276271013" type="System" />
             </conditions>
@@ -403,7 +403,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1954453889945347">
+        <event-block disabled="1" sid="1954453889945347">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="9202446259489328" type="System">
                     <param id="0" name="Variable">is3Unlocked</param>
@@ -417,7 +417,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="6886331077931621">
+        <event-block disabled="1" sid="6886331077931621">
             <conditions>
                 <condition id="-22" name="Else" sid="9456286269387497" type="System" />
             </conditions>
@@ -427,7 +427,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1071080818993363">
+        <event-block disabled="1" sid="1071080818993363">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="6901528664438198" type="System">
                     <param id="0" name="Variable">is4Unlocked</param>
@@ -441,7 +441,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="5197529077323047">
+        <event-block disabled="1" sid="5197529077323047">
             <conditions>
                 <condition id="-22" name="Else" sid="1420253934395537" type="System" />
             </conditions>

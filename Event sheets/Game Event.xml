@@ -3,16 +3,73 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
-        <variable constant="0" name="isPlayerDied" sid="4191923731652028" static="0" type="number">0</variable>
-        <variable constant="0" name="IsLeaderboard" sid="4847377864471878" static="0" type="number">0</variable>
+        <variable constant="0" name="LeaderboardTimer" sid="9121320168487334" static="0" type="number">0</variable>
+        <variable constant="0" name="PlanetVariation" sid="4789221111051074" static="0" type="number">0</variable>
+        <variable constant="0" name="HasItem" sid="3914621146788642" static="0" type="number">0</variable>
+        <variable constant="0" name="QuestionTimer" sid="7707907909350086" static="0" type="number">0</variable>
+        <variable constant="0" name="Miles" sid="1080778354052898" static="0" type="number">0</variable>
+        <variable constant="0" name="Speed" sid="1523906213569093" static="0" type="number">300</variable>
+        <variable constant="0" name="IsPlayerDied" sid="4191923731652028" static="0" type="number">0</variable>
+        <variable constant="0" name="IsLeaderboard" sid="5896014842582774" static="0" type="number">0</variable>
+        <variable constant="0" name="HasPostedScore" sid="4847377864471878" static="0" type="number">0</variable>
         <variable constant="0" name="ScoreUnit" sid="196260553137451" static="0" type="number">1</variable>
-        <variable constant="0" name="IsItemBackground" sid="3994101323542543" static="0" type="number">0</variable>
         <variable constant="0" name="IsBonusLevel" sid="9971066634741977" static="0" type="number">0</variable>
         <variable constant="0" name="Background" sid="67262966032393" static="0" type="number">0</variable>
         <variable constant="0" name="isPaused" sid="8789961767725841" static="0" type="number">0</variable>
         <variable constant="0" name="PlayerScore" sid="5154908271582909" static="0" type="number">0</variable>
         <variable constant="0" name="PipeVariation" sid="7581905702786113" static="0" type="number">0</variable>
-        <event-group description="" sid="6778598484776996" title="Debug" />
+        <event-group description="" sid="6778598484776996" title="Debug">
+            <sub-events>
+                <event-block sid="1721528917534047">
+                    <conditions>
+                        <condition id="-18" name="Is in preview" sid="5049926536036496" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="3627168355304618" type="Obstacle">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2169458309990668">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="5309059916699648" type="Keyboard">
+                            <param id="0" name="Key">80 (P)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="9670105532999979" type="Player">
+                            <param id="0" name="Instance variable">frame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8771693222816667">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2904247536846185" type="Player">
+                                    <param id="0" name="Instance variable">frame</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8770799191685276" type="Player">
+                                    <param id="0" name="Instance variable">frame</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4126824424842069">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Set frame" sid="431855177143592" type="Player">
+                                    <param id="0" name="Frame number">Player.frame</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="1152087620458756" title="System">
             <sub-events>
                 <event-block sid="9852792807390658">
@@ -56,10 +113,10 @@
                         <condition id="-1" name="Every tick" sid="3496394987663529" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="5345150138974328" type="BoxVersion">
+                        <action id="0" name="Set text" sid="179705618370522" type="BoxVersion">
                             <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                         </action>
-                        <action id="0" name="Set text" sid="9657534332213357" type="BoxScore">
+                        <action id="0" name="Set text" sid="1985997300842594" type="BoxScore">
                             <param id="0" name="Text">&quot;Score: &quot; &amp; PlayerScore</param>
                         </action>
                     </actions>
@@ -75,13 +132,16 @@
                     </conditions>
                     <actions>
                         <action id="-1" name="Set X" sid="7275786735010941" type="Background">
-                            <param id="0" name="X">Self.X - 5</param>
+                            <param id="0" name="X">Self.X - Speed * dt</param>
                         </action>
                         <action id="-1" name="Set X" sid="4486064315434869" type="Obstacle">
-                            <param id="0" name="X">Self.X - 5</param>
+                            <param id="0" name="X">Self.X - Speed * dt</param>
                         </action>
                         <action id="-1" name="Set X" sid="5592410314012338" type="Item">
-                            <param id="0" name="X">Self.X - 5</param>
+                            <param id="0" name="X">Self.X - Speed * dt</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="5905328576670544" type="Planet">
+                            <param id="0" name="X">Self.X - Speed * dt</param>
                         </action>
                         <action id="0" name="Set text" sid="9914611989785653" type="BoxVersion">
                             <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
@@ -91,7 +151,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="4019129678494469">
+                <event-block sid="4019129678494469">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="1281638433833766" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -295,10 +355,35 @@
                         <action id="-26" name="Restart layout" sid="6698311130495306" type="System" />
                     </actions>
                 </event-block>
+                <event-block sid="1672671375181468">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="4426098720564455" type="WebStorage">
+                            <param id="0" name="Key">&quot;facebook&quot;</param>
+                            <param id="1" name="Text to compare">&quot;true&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="497983858068978" type="ScoresText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="7458157205288591" title="Level">
+        <event-group description="" sid="7458157205288591" title="Level">
             <sub-events>
+                <event-block sid="6717840333190424">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="1502497540203645" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6927319737898331" type="System">
+                            <param id="0" name="Variable">QuestionTimer</param>
+                            <param id="1" name="Value">random(10, 20)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="6308218700820113">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="4300444774520759" type="System" />
@@ -308,6 +393,7 @@
                             <param id="0" name="Name">&quot;MoveItem&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action id="-24" name="Move to top" sid="4026473052151184" type="Player" />
                     </actions>
                 </event-block>
                 <event-block sid="3758522296958116">
@@ -319,6 +405,10 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="7388001236234422" type="Item">
                             <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="2315551505270021" type="System">
+                            <param id="0" name="Variable">QuestionTimer</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -341,7 +431,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="1021449657218617">
+                <event-block sid="1021449657218617">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="6037516888355168" type="System">
                             <param id="0" name="Interval (seconds)">1.5</param>
@@ -406,38 +496,28 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="1231984473846585">
+                <event-block sid="4427847548640162">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="2190132244908576" type="System">
-                            <param id="0" name="Variable">IsItemBackground</param>
+                        <condition id="-14" name="Compare variable" sid="5932060574109457" type="System">
+                            <param id="0" name="Variable">Miles</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
+                            <param id="2" name="Value">Speed</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="7926765957661049" type="System">
-                            <param id="0" name="Variable">IsItemBackground</param>
+                        <action id="-9" name="Set value" sid="5581078753849018" type="System">
+                            <param id="0" name="Variable">Miles</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4918616044023814" type="System">
+                            <param id="0" name="Variable">Speed</param>
                             <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="9118476722033503" type="System">
-                            <param id="0" name="Object to create">ItemBackground</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + 100</param>
-                            <param id="3" name="Y">random(Item.Height / 2, LayoutHeight - Item.Height / 2)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="5084322701176026" type="Item">
-                            <param id="0" name="Instance variable">timer</param>
-                            <param id="1" name="Value">random(1, 2)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="188823352687785" type="Item">
-                            <param id="0" name="Instance variable">direction</param>
-                            <param id="1" name="Value">floor(random(0, 8))</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="3898507512313179">
+                <event-block sid="7441639988819879">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="9120259248641334" type="System">
+                        <condition id="-14" name="Compare variable" sid="8077471659195611" type="System">
                             <param id="0" name="Variable">isPaused</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
@@ -445,286 +525,438 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="6336809522526343">
+                        <event-block sid="2914351192748369">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="6323533779586763" type="System">
+                                <condition id="-14" name="Compare variable" sid="409043982061535" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="6815973146318593" type="System">
+                                <condition id="-14" name="Compare variable" sid="2993720811748062" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="9039003796783061" type="System">
+                                <action id="-9" name="Set value" sid="2812488814679718" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="2122638700050467" type="System">
+                                <action id="-3" name="Create object" sid="5727236396845294" type="System">
                                     <param id="0" name="Object to create">BackgroundNight</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="2" name="X">LayoutWidth</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="8209126709902351" type="BackgroundNight">
+                                <action id="-29" name="Move to object" sid="8686526163656224" type="BackgroundNight">
                                     <param id="0" name="Where">1</param>
                                     <param id="1" name="Object">BackgroundCity</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="2803893080041247" type="System">
+                                <action id="-3" name="Create object" sid="3163282891730126" type="System">
                                     <param id="0" name="Object to create">BackgroundNight</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth + Background.Width / 2</param>
+                                    <param id="2" name="X">LayoutWidth + Background.Width</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="7981437695118853" type="BackgroundNight">
+                                <action id="-29" name="Move to object" sid="4821681167372954" type="BackgroundNight">
                                     <param id="0" name="Where">1</param>
                                     <param id="1" name="Object">BackgroundCity</param>
                                 </action>
-                                <action behavior="Fade" id="1" name="Start fade" sid="8416084606666" type="BackgroundCity" />
-                                <action id="-10" name="Set value" sid="4054294687770291" type="BackgroundNight">
+                                <action behavior="Fade" id="1" name="Start fade" sid="2616682780199227" type="BackgroundCity" />
+                                <action id="-10" name="Set value" sid="6752708567286387" type="BackgroundNight">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Value">random(10, 20)</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="7520774062238437">
+                        <event-block sid="6340948465360303">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="2612310084011691" type="System">
+                                <condition id="-14" name="Compare variable" sid="4065055133990861" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">2</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="6078912357249132" type="System">
+                                <condition id="-14" name="Compare variable" sid="5962497298315509" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="7535907821704905" type="System">
+                                <action id="-9" name="Set value" sid="2989894978767664" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="8922568815579901" type="System">
+                                <action id="-3" name="Create object" sid="6321870935804766" type="System">
                                     <param id="0" name="Object to create">BackgroundSpace</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="2" name="X">LayoutWidth</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="9676427655722785" type="BackgroundSpace">
+                                <action id="-29" name="Move to object" sid="9765170480085284" type="BackgroundSpace">
                                     <param id="0" name="Where">1</param>
                                     <param id="1" name="Object">BackgroundCity</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="1311238723688106" type="System">
+                                <action id="-3" name="Create object" sid="1538029167912976" type="System">
                                     <param id="0" name="Object to create">BackgroundSpace</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth + Background.Width / 2</param>
+                                    <param id="2" name="X">LayoutWidth + Background.Width</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="5482228974189407" type="BackgroundSpace">
+                                <action id="-29" name="Move to object" sid="3532948999775171" type="BackgroundSpace">
                                     <param id="0" name="Where">1</param>
                                     <param id="1" name="Object">BackgroundCity</param>
                                 </action>
-                                <action behavior="Fade" id="1" name="Start fade" sid="334779146384248" type="BackgroundCity" />
-                                <action id="-10" name="Set value" sid="7501073891781492" type="BackgroundSpace">
+                                <action behavior="Fade" id="1" name="Start fade" sid="3944929358878707" type="BackgroundCity" />
+                                <action id="-10" name="Set value" sid="8448418487232514" type="BackgroundSpace">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Value">random(10, 20)</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="7698243388474738">
+                        <event-block sid="1869131313233735">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="3630226378071266" type="System">
+                                <condition id="-14" name="Compare variable" sid="370321393020233" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">3</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="7808047901358865" type="System">
+                                <condition id="-14" name="Compare variable" sid="3824995635459996" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="7352371418546723" type="System">
+                                <action id="-9" name="Set value" sid="5730359555559156" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="2084189430907594" type="System">
+                                <action id="-3" name="Create object" sid="5759602724799838" type="System">
                                     <param id="0" name="Object to create">BackgroundVolcano</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="2" name="X">LayoutWidth</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="4345551306832149" type="BackgroundVolcano">
+                                <action id="-29" name="Move to object" sid="2431681865520018" type="BackgroundVolcano">
                                     <param id="0" name="Where">1</param>
                                     <param id="1" name="Object">BackgroundCity</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="2477374733222446" type="System">
+                                <action id="-3" name="Create object" sid="8902768375961984" type="System">
                                     <param id="0" name="Object to create">BackgroundVolcano</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth + Background.Width / 2</param>
+                                    <param id="2" name="X">LayoutWidth + Background.Width</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-29" name="Move to object" sid="2100686979847767" type="BackgroundVolcano">
+                                <action id="-29" name="Move to object" sid="6475055837804434" type="BackgroundVolcano">
                                     <param id="0" name="Where">1</param>
                                     <param id="1" name="Object">BackgroundCity</param>
                                 </action>
-                                <action behavior="Fade" id="1" name="Start fade" sid="8656734789779834" type="BackgroundCity" />
-                                <action id="-10" name="Set value" sid="4759703795725074" type="BackgroundVolcano">
+                                <action behavior="Fade" id="1" name="Start fade" sid="4532309198206699" type="BackgroundCity" />
+                                <action id="-10" name="Set value" sid="1217658112905313" type="BackgroundVolcano">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Value">random(10, 20)</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9119713578420582">
+                        <event-block sid="3919095431663984">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5779003678322055" type="Background">
+                                <condition id="-7" name="Compare instance variable" sid="1525957332778193" type="Background">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="1960994198015724" type="System">
+                                <condition id="-14" name="Compare variable" sid="2388872735231933" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="6981066530477651" type="System">
+                                <condition id="-14" name="Compare variable" sid="4186308702016206" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="6593491597339448" type="System">
+                                <action id="-9" name="Set value" sid="1729298156380709" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="5474408471752221" type="System">
+                                <action id="-9" name="Set value" sid="5879970483718555" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="464876402683887" type="System">
+                                <action id="-9" name="Set value" sid="4608051336876236" type="System">
                                     <param id="0" name="Variable">ScoreUnit</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="7568752054290557" type="System">
+                                <action id="-3" name="Create object" sid="2581594628202066" type="System">
                                     <param id="0" name="Object to create">BackgroundCity</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="2" name="X">LayoutWidth</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="6464858926571881" type="BackgroundCity" />
-                                <action id="-3" name="Create object" sid="3623439977929631" type="System">
+                                <action id="-25" name="Move to bottom" sid="2010980919584366" type="BackgroundCity" />
+                                <action id="-3" name="Create object" sid="9652954867947314" type="System">
                                     <param id="0" name="Object to create">BackgroundCity</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth + Background.Width / 2</param>
+                                    <param id="2" name="X">LayoutWidth + Background.Width</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="601426271238282" type="BackgroundCity" />
-                                <action behavior="Fade" id="1" name="Start fade" sid="5382653515802813" type="BackgroundNight" />
+                                <action id="-25" name="Move to bottom" sid="5163180444931799" type="BackgroundCity" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="3824002742052371" type="BackgroundNight" />
                             </actions>
                         </event-block>
-                        <event-block sid="3801627040885739">
+                        <event-block sid="1837407377168976">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="7288176394966689" type="Background">
+                                <condition id="-7" name="Compare instance variable" sid="1888664744191003" type="Background">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="8659738402242054" type="System">
+                                <condition id="-14" name="Compare variable" sid="700716057447183" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">2</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="7085509573948474" type="System">
+                                <condition id="-14" name="Compare variable" sid="6237029092274777" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="9763462657816526" type="System">
+                                <action id="-9" name="Set value" sid="4627146182691476" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="4847226563092609" type="System">
+                                <action id="-9" name="Set value" sid="4116283804708011" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="9240306279447689" type="System">
+                                <action id="-9" name="Set value" sid="6791841839596714" type="System">
                                     <param id="0" name="Variable">ScoreUnit</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="3746565270308121" type="System">
+                                <action id="-3" name="Create object" sid="5225554388942628" type="System">
                                     <param id="0" name="Object to create">BackgroundCity</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="2" name="X">LayoutWidth</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="1068604778992139" type="BackgroundCity" />
-                                <action id="-3" name="Create object" sid="7730736608293261" type="System">
+                                <action id="-25" name="Move to bottom" sid="1882261283888642" type="BackgroundCity" />
+                                <action id="-3" name="Create object" sid="5617616871131785" type="System">
                                     <param id="0" name="Object to create">BackgroundCity</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth + Background.Width / 2</param>
+                                    <param id="2" name="X">LayoutWidth + Background.Width</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="3780190127784457" type="BackgroundCity" />
-                                <action behavior="Fade" id="1" name="Start fade" sid="1810248552112119" type="BackgroundNight" />
+                                <action id="-25" name="Move to bottom" sid="2442401760383752" type="BackgroundCity" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="6447240115227232" type="BackgroundNight" />
                             </actions>
                         </event-block>
-                        <event-block sid="3336373500420767">
+                        <event-block sid="7919006911939717">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="4290588927664056" type="Background">
+                                <condition id="-7" name="Compare instance variable" sid="1020232817549989" type="Background">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="4809471937464797" type="System">
+                                <condition id="-14" name="Compare variable" sid="2813659737539044" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">3</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="1337491136574502" type="System">
+                                <condition id="-14" name="Compare variable" sid="1116216294285806" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="9926008666726292" type="System">
+                                <action id="-9" name="Set value" sid="6107631875459825" type="System">
                                     <param id="0" name="Variable">IsBonusLevel</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="6939308579564341" type="System">
+                                <action id="-9" name="Set value" sid="1672486703584194" type="System">
                                     <param id="0" name="Variable">Background</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="8098952361995637" type="System">
+                                <action id="-9" name="Set value" sid="1922602473198369" type="System">
                                     <param id="0" name="Variable">ScoreUnit</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="795971458793542" type="System">
+                                <action id="-3" name="Create object" sid="618745523658196" type="System">
                                     <param id="0" name="Object to create">BackgroundCity</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="2" name="X">LayoutWidth</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="6291494617162461" type="BackgroundCity" />
-                                <action id="-3" name="Create object" sid="182552341448412" type="System">
+                                <action id="-25" name="Move to bottom" sid="9767734621598177" type="BackgroundCity" />
+                                <action id="-3" name="Create object" sid="3860048017660382" type="System">
                                     <param id="0" name="Object to create">BackgroundCity</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">LayoutWidth + Background.Width / 2</param>
+                                    <param id="2" name="X">LayoutWidth + Background.Width</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="8995511217179588" type="BackgroundCity" />
-                                <action behavior="Fade" id="1" name="Start fade" sid="94867808222222" type="BackgroundVolcano" />
+                                <action id="-25" name="Move to bottom" sid="959493229935551" type="BackgroundCity" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="7582937251411534" type="BackgroundVolcano" />
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="5927991657620471">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5967355456766319" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2369564208037537" type="System">
+                            <param id="0" name="Variable">QuestionTimer</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8235064721596295" type="System">
+                            <param id="0" name="Variable">IsBonusLevel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8543972754828088" type="System">
+                            <param id="0" name="Variable">HasItem</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2869883512102644" type="Function">
+                            <param id="0" name="Name">&quot;CreateQuestion&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1117741408649933">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5953671351982609" type="System">
+                            <param id="0" name="Variable">Background</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6429467817781322" type="Obstacle">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4021780495512413">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2051165746046177" type="System">
+                            <param id="0" name="Variable">Background</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="5973701831709241" type="Obstacle">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6691566799235907">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="6090158700875712" type="System">
+                                    <param id="0" name="Interval (seconds)">2.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7683906741764126" type="System">
+                                    <param id="0" name="Variable">PlanetVariation</param>
+                                    <param id="1" name="Value">floor(random(0, 3))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8900257860263608">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9638291744324814" type="System">
+                                            <param id="0" name="Variable">PlanetVariation</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="7448830218377849" type="System">
+                                            <param id="0" name="Object to create">Planet1</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">LayoutWidth + 400</param>
+                                            <param id="3" name="Y">random(Planet.Height / 2, LayoutHeight - Planet.Height / 2)</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="4816971158984208" type="Planet1">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Object">Background</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7859280807082377">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7075197629274233" type="System">
+                                            <param id="0" name="Variable">PlanetVariation</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="8067714124327055" type="System">
+                                            <param id="0" name="Object to create">Planet2</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">LayoutWidth + 400</param>
+                                            <param id="3" name="Y">random(Planet.Height / 2, LayoutHeight - Planet.Height / 2)</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="3016909785671083" type="Planet2">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Object">Background</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4725151737262856">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="130054258054756" type="System">
+                                            <param id="0" name="Variable">PlanetVariation</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="169943094698041" type="System">
+                                            <param id="0" name="Object to create">Planet3</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="X">LayoutWidth + 400</param>
+                                            <param id="3" name="Y">random(Planet.Height / 2, LayoutHeight - Planet.Height / 2)</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="7077761477028214" type="Planet3">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Object">Background</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4447568600115251">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="982209325088304" type="System">
+                            <param id="0" name="Variable">Background</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="7522880487344656" type="Obstacle">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -750,9 +982,9 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3229894433523051">
+                <event-block disabled="1" sid="3229894433523051">
                     <conditions>
-                        <condition id="1" name="On any touch end" sid="4478313978012859" type="Touch" />
+                        <condition id="1" name="On any touch end" sid="6146962139817335" type="Touch" />
                         <condition id="-14" name="Compare variable" sid="5397599070933883" type="System">
                             <param id="0" name="Variable">IsLeaderboard</param>
                             <param id="1" name="Comparison">0</param>
@@ -762,14 +994,89 @@
                     <actions>
                         <action id="-9" name="Set value" sid="9416916786740836" type="System">
                             <param id="0" name="Variable">IsLeaderboard</param>
-                            <param id="1" name="Value">2</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                         <action id="5" name="Hide Leaderboard" sid="6693802346252535" type="Clayio" />
+                        <action id="-9" name="Set value" sid="6889703758376842" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3428146249511974">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4992358740378747" type="Touch">
+                            <param id="0" name="Object">ScoresText</param>
+                        </condition>
+                        <condition id="6" name="Compare key value (as text)" sid="3495432055740052" type="WebStorage">
+                            <param id="0" name="Key">&quot;facebook&quot;</param>
+                            <param id="1" name="Text to compare">&quot;true&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9929173829220597" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-9" name="Set value" sid="5780174657835909" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="3825447622647616" type="Function">
+                            <param id="0" name="Name">&quot;ShowLeaderboard&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2621491392251397">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="7598777056076299" type="Touch" />
+                        <condition id="6" name="Compare key value (as text)" sid="4383195009226589" type="WebStorage">
+                            <param id="0" name="Key">&quot;facebook&quot;</param>
+                            <param id="1" name="Text to compare">&quot;true&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2572272657011167" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="212414848773061" type="System">
+                            <param id="0" name="Variable">LeaderboardTimer</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8418277788355164" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4194934842545453" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="5" name="Hide Leaderboard" sid="469982883855557" type="Clayio" />
+                    </actions>
+                </event-block>
+                <event-block sid="1078591002947274">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="7101489762583495" type="System">
+                            <param id="0" name="Interval (seconds)">2.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="3390513710305285" type="System">
+                            <param id="0" name="Variable">LeaderboardTimer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5625581531054905" title="Collision">
+        <event-group description="" sid="5625581531054905" title="Collision">
             <sub-events>
                 <event-block sid="6229384262465646">
                     <conditions>
@@ -788,7 +1095,7 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Set value" sid="5566706335389822" type="System">
-                            <param id="0" name="Variable">isPlayerDied</param>
+                            <param id="0" name="Variable">IsPlayerDied</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="6005497092087538" type="Player" />
@@ -806,14 +1113,14 @@
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="9613931614870779" type="System">
-                            <param id="0" name="Variable">isPlayerDied</param>
+                            <param id="0" name="Variable">IsPlayerDied</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="3157357833681422" type="Function">
-                            <param id="0" name="Name">&quot;StartLeaderboard&quot;</param>
+                            <param id="0" name="Name">&quot;PostScore&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
@@ -855,12 +1162,68 @@
                         <condition behavior="Solid" id="0" name="Is enabled" sid="9307006103482355" type="Obstacle" />
                     </conditions>
                     <actions>
+                        <action id="-10" name="Add to" sid="4657779896349578" type="System">
+                            <param id="0" name="Variable">Miles</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-10" name="Add to" sid="636128883417767" type="System">
                             <param id="0" name="Variable">PlayerScore</param>
                             <param id="1" name="Value">ScoreUnit</param>
                         </action>
                         <action behavior="Solid" id="0" name="Set enabled" sid="9481362189218478" type="Obstacle">
                             <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6809125611919272">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="4983534170513509" type="PipeLong">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="6523794043294401" type="PipeLong">
+                            <param id="0" name="Y">Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="422085830386837">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="774829698137405" type="PipeShort">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="5846363521173842" type="PipeShort">
+                            <param id="0" name="Y">Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8203872050866962">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="8989581584778776" type="PipeLongFlip">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight - Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="2814956168268678" type="PipeLongFlip">
+                            <param id="0" name="Y">LayoutHeight - Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4278464134927338">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="9417088630388338" type="PipeShortFlip">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight - Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="748254673922584" type="PipeShortFlip">
+                            <param id="0" name="Y">LayoutHeight - Self.Height / 2</param>
                         </action>
                     </actions>
                 </event-block>
@@ -882,9 +1245,54 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="9291219519054561">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="5239187846141936" type="Item">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="5820610078830381" type="Item">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="4875421843900814" type="Item">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7152468465858941">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="6185093719132762" type="Item">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight - Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="9658894781562726" type="Item">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="717004974603585" type="Item">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8368048858727969">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="8758847200184318" type="Item">
+                            <param id="0" name="Object">Obstacle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="8482442368138814" type="Item">
+                            <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="9306876313081022" title="Memory">
+        <event-group description="" sid="9306876313081022" title="Memory">
             <sub-events>
                 <event-block sid="846662023014867">
                     <conditions>
@@ -895,7 +1303,7 @@
                     </conditions>
                     <actions>
                         <action id="-1" name="Set X" sid="5990094045008489" type="Background">
-                            <param id="0" name="X">(LayoutWidth + (Self.Width / 2)) - 5</param>
+                            <param id="0" name="X">(LayoutWidth + (Self.Width / 2)) - (Speed * dt)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -925,7 +1333,7 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Set value" sid="2065415480077614" type="System">
-                            <param id="0" name="Variable">isPlayerDied</param>
+                            <param id="0" name="Variable">IsPlayerDied</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="3389945201934599" type="Player" />
@@ -949,7 +1357,7 @@
         </event-group>
         <event-group description="" sid="4233841121576778" title="Function">
             <sub-events>
-                <event-block sid="7105819477388895">
+                <event-block disabled="1" sid="7105819477388895">
                     <conditions>
                         <condition id="0" name="On function" sid="157177591988215" type="Function">
                             <param id="0" name="Name">&quot;StartLeaderboard&quot;</param>
@@ -965,7 +1373,7 @@
                         <event-block sid="9677826562587997">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="1166669242067772" type="System">
-                                    <param id="0" name="Variable">IsLeaderboard</param>
+                                    <param id="0" name="Variable">HasPostedScore</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -987,7 +1395,7 @@
                         <event-block sid="6416565365629576">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="9041574396289091" type="System">
-                                    <param id="0" name="Variable">IsLeaderboard</param>
+                                    <param id="0" name="Variable">HasPostedScore</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -999,12 +1407,85 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="7129690736178202" type="System">
-                                    <param id="0" name="Variable">IsLeaderboard</param>
+                                    <param id="0" name="Variable">HasPostedScore</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="2598720755854978">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8526818355667036" type="Function">
+                            <param id="0" name="Name">&quot;PostScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4993499974724568">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7601252826151185" type="System">
+                                    <param id="0" name="Variable">HasPostedScore</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="6" name="Compare key value (as text)" sid="5113690358575852" type="WebStorage">
+                                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Post Leaderboard Score" sid="7905013447434745" type="Clayio">
+                                    <param id="0" name="Player Name">Facebook.FullName</param>
+                                    <param id="1" name="Player Score">PlayerScore</param>
+                                    <param id="2" name="Leaderboard ID">3591</param>
+                                    <param id="3" name="Show Notification">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4844242026532137">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1673619566928028" type="System">
+                                    <param id="0" name="Variable">HasPostedScore</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="6" name="Compare key value (as text)" sid="8088102654468494" type="WebStorage">
+                                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;false&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6671930002755112" type="System">
+                                    <param id="0" name="Variable">HasPostedScore</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8259042689826213">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9272930553674069" type="Function">
+                            <param id="0" name="Name">&quot;ShowLeaderboard&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2388155130039392" type="System">
+                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Show Leaderboard" sid="3554342101231288" type="Clayio">
+                            <param id="0" name="Leaderboard ID">3591</param>
+                            <param id="1" name="Time Frame">0</param>
+                            <param id="2" name="High Score">0</param>
+                            <param id="3" name="Sort">0</param>
+                            <param id="4" name="Scores From">0</param>
+                            <param id="5" name="Number of Scores">200</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="4019165628742884">
                     <conditions>
@@ -1069,160 +1550,135 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="6164506612555976">
+                <event-block sid="7623914870690983">
                     <conditions>
-                        <condition id="0" name="On function" sid="5672741977370417" type="Function">
+                        <condition id="0" name="On function" sid="5665857847309095" type="Function">
                             <param id="0" name="Name">&quot;MoveItem&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="3021369867452649">
+                        <event-block sid="2787430138691966">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="9817700500494051" type="Item">
+                                <condition id="-7" name="Compare instance variable" sid="3890753787827857" type="Item">
                                     <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="2747823466716746" type="Item">
+                                <action id="-10" name="Set value" sid="1578066512884649" type="Item">
                                     <param id="0" name="Instance variable">timer</param>
-                                    <param id="1" name="Value">random(1, 2)</param>
+                                    <param id="1" name="Value">random(0, 0.01)</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="5131174138894142" type="Item">
+                                <action id="-10" name="Set value" sid="8011570256174848" type="Item">
                                     <param id="0" name="Instance variable">direction</param>
-                                    <param id="1" name="Value">floor(random(0, 8))</param>
+                                    <param id="1" name="Value">floor(random(0, 5))</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="3987441754622281">
+                        <event-block sid="2034092551864704">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="7093495021139308" type="Item">
-                                    <param id="0" name="Instance variable">direction</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="3305315035714984" type="Item">
-                                    <param id="0" name="Control">2</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="1850829194900657">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5554884119142509" type="Item">
+                                <condition id="-7" name="Compare instance variable" sid="7903276155836872" type="Item">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="3734407898468577" type="Item">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="2140061339612614" type="Item">
                                     <param id="0" name="Control">2</param>
                                 </action>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="9193309554218716" type="Item">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="7246772874056241" type="Item">
                                     <param id="0" name="Control">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9501791634833115">
+                        <event-block sid="620235622047325">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="1580383777873062" type="Item">
+                                <condition id="-7" name="Compare instance variable" sid="1756318840291817" type="Item">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="6495871874332825" type="Item">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="2965219261124467" type="Item">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4804044726991953">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1175751381533837" type="Item">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">3</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="478272375272442" type="Item">
-                                    <param id="0" name="Control">1</param>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="6313479022924053" type="Item">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="5914534313356534" type="Item">
+                                    <param id="0" name="Control">0</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="5244079622095039">
+                        <event-block sid="2075569660298786">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5597061984959031" type="Item">
+                                <condition id="-7" name="Compare instance variable" sid="9128271584457234" type="Item">
                                     <param id="0" name="Instance variable">direction</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">4</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="342341818837295" type="Item">
-                                    <param id="0" name="Control">1</param>
-                                </action>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="4489697188632637" type="Item">
-                                    <param id="0" name="Control">3</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4176838721879326">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5834603085524571" type="Item">
-                                    <param id="0" name="Instance variable">direction</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">5</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="6112024931809511" type="Item">
-                                    <param id="0" name="Control">3</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="9617555494079206">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="7018637748908431" type="Item">
-                                    <param id="0" name="Instance variable">direction</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">6</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="4729483580699446" type="Item">
-                                    <param id="0" name="Control">3</param>
-                                </action>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="3240876306995103" type="Item">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="8963334660352946" type="Item">
                                     <param id="0" name="Control">0</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4605744378899019">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="1338736108892501" type="Item">
-                                    <param id="0" name="Instance variable">direction</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">7</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="3553751429839516" type="Item">
-                                    <param id="0" name="Control">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8449276550920419">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="1478484897381446" type="Item">
-                                    <param id="0" name="Instance variable">direction</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">8</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="221888454339614" type="Item">
-                                    <param id="0" name="Control">0</param>
-                                </action>
-                                <action behavior="8Direction" id="7" name="Simulate control" sid="8895241029439927" type="Item">
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="702253424474666" type="Item">
                                     <param id="0" name="Control">2</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" disabled="1" sid="6226074112311384">
+                <event-block sid="6863119021379338">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9260562599977012" type="Function">
+                            <param id="0" name="Name">&quot;CreateQuestion&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6190036529731189" type="System">
+                            <param id="0" name="Variable">HasItem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6943819097198103" type="System">
+                            <param id="0" name="Object to create">ItemBackground</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">LayoutWidth + 100</param>
+                            <param id="3" name="Y">random(Item.Height / 2, LayoutHeight - Item.Height / 2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7034791536885689" type="Item">
+                            <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Value">random(1, 2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6814895340613077" type="Item">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">floor(random(0, 5))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8811649822878233" type="System">
+                            <param id="0" name="Variable">QuestionTimer</param>
+                            <param id="1" name="Value">random(10, 20)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="6226074112311384">
                     <conditions>
                         <condition id="1" name="Is in CocoonJS" sid="7453782207507713" type="CocoonJS" />
                     </conditions>
@@ -1258,30 +1714,22 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="6041773629854459" type="System">
-                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="0" name="Variable">HasPostedScore</param>
                             <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="4" name="Show Leaderboard" sid="3307333268714939" type="Clayio">
-                            <param id="0" name="Leaderboard ID">3591</param>
-                            <param id="1" name="Time Frame">0</param>
-                            <param id="2" name="High Score">0</param>
-                            <param id="3" name="Sort">0</param>
-                            <param id="4" name="Scores From">0</param>
-                            <param id="5" name="Number of Scores">200</param>
                         </action>
                     </actions>
                 </event-block>
                 <event-block sid="3742232046653902">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9592072398812176" type="System">
-                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="0" name="Variable">HasPostedScore</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="1477316581116771" type="System">
-                            <param id="0" name="Variable">IsLeaderboard</param>
+                            <param id="0" name="Variable">HasPostedScore</param>
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="-3" name="Create object" sid="9273135135497472" type="System">

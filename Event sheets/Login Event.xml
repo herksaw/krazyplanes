@@ -47,7 +47,7 @@
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="1026161752614607" type="System">
-                            <param id="0" name="Layout">Choose Layout</param>
+                            <param id="0" name="Layout">Game Layout</param>
                         </action>
                     </actions>
                 </event-block>
@@ -65,7 +65,7 @@
                     <param id="1" name="Value">&quot;false&quot;</param>
                 </action>
                 <action id="-2" name="Go to layout" sid="3743367176989398" type="System">
-                    <param id="0" name="Layout">Choose Layout</param>
+                    <param id="0" name="Layout">Game Layout</param>
                 </action>
             </actions>
         </event-block>
