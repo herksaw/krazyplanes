@@ -496,7 +496,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4427847548640162">
+                <event-block disabled="1" sid="4427847548640162">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="5932060574109457" type="System">
                             <param id="0" name="Variable">Miles</param>
@@ -1163,8 +1163,8 @@
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="4657779896349578" type="System">
-                            <param id="0" name="Variable">Miles</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="0" name="Variable">Speed</param>
+                            <param id="1" name="Value">10</param>
                         </action>
                         <action id="-10" name="Add to" sid="636128883417767" type="System">
                             <param id="0" name="Variable">PlayerScore</param>
