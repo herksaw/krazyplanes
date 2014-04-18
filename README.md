@@ -6,4 +6,4 @@ Alpha status. Beware of the bugs attack.
 Version
 =======
 
-0.0.2.x
+0.0.3.x

@@ -3,6 +3,16 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="HeightUnit" sid="833226288217692" static="0" type="number">2</variable>
+        <variable constant="0" name="HeightVariation" sid="9072042949711765" static="0" type="number">0</variable>
+        <variable constant="0" name="HeightShortMax" sid="7511834440714826" static="0" type="number">220</variable>
+        <variable constant="0" name="HeightShortMin" sid="6886279141514057" static="0" type="number">100</variable>
+        <variable constant="0" name="HeightLongMax" sid="7250257969842209" static="0" type="number">420</variable>
+        <variable constant="0" name="HeightLongMin" sid="7184395365083269" static="0" type="number">300</variable>
+        <variable constant="0" name="HeightShortMax2" sid="1825128185828682" static="0" type="number">220</variable>
+        <variable constant="0" name="HeightShortMin2" sid="6296731898212982" static="0" type="number">100</variable>
+        <variable constant="0" name="HeightLongMax2" sid="4781241377997799" static="0" type="number">420</variable>
+        <variable constant="0" name="HeightLongMin2" sid="6058302263528698" static="0" type="number">300</variable>
         <variable constant="0" name="LeaderboardTimer" sid="9121320168487334" static="0" type="number">0</variable>
         <variable constant="0" name="PlanetVariation" sid="4789221111051074" static="0" type="number">0</variable>
         <variable constant="0" name="HasItem" sid="3914621146788642" static="0" type="number">0</variable>
@@ -18,7 +28,7 @@
         <variable constant="0" name="isPaused" sid="8789961767725841" static="0" type="number">0</variable>
         <variable constant="0" name="PlayerScore" sid="5154908271582909" static="0" type="number">0</variable>
         <variable constant="0" name="PipeVariation" sid="7581905702786113" static="0" type="number">0</variable>
-        <event-group description="" sid="6778598484776996" title="Debug">
+        <event-group collapsed="1" description="" sid="6778598484776996" title="Debug">
             <sub-events>
                 <event-block sid="1721528917534047">
                     <conditions>
@@ -70,7 +80,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1152087620458756" title="System">
+        <event-group collapsed="1" description="" sid="1152087620458756" title="System">
             <sub-events>
                 <event-block sid="9852792807390658">
                     <conditions>
@@ -371,7 +381,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="7458157205288591" title="Level">
+        <event-group collapsed="1" description="" sid="7458157205288591" title="Level">
             <sub-events>
                 <event-block sid="6717840333190424">
                     <conditions>
@@ -445,7 +455,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="1130609712390408" type="System">
                             <param id="0" name="Variable">PipeVariation</param>
-                            <param id="1" name="Value">floor(random(0, 3))</param>
+                            <param id="1" name="Value">floor(random(0, 2))</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -458,8 +468,8 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="1949285894997946" type="Function">
-                                    <param id="0" name="Name">&quot;CreatePipeShort&quot;</param>
+                                <action id="0" name="Call function" sid="9929472602026067" type="Function">
+                                    <param id="0" name="Name">&quot;CreatePipeLongShort&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
@@ -475,21 +485,6 @@
                             <actions>
                                 <action id="0" name="Call function" sid="3250771551038721" type="Function">
                                     <param id="0" name="Name">&quot;CreatePipeShortLong&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="307737187850125">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="7088391592507287" type="System">
-                                    <param id="0" name="Variable">PipeVariation</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="9929472602026067" type="Function">
-                                    <param id="0" name="Name">&quot;CreatePipeLongShort&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
@@ -515,7 +510,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="7441639988819879">
+                <event-block collapsed="1" sid="7441639988819879">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="8077471659195611" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -753,7 +748,7 @@
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
                                 <action id="-25" name="Move to bottom" sid="2442401760383752" type="BackgroundCity" />
-                                <action behavior="Fade" id="1" name="Start fade" sid="6447240115227232" type="BackgroundNight" />
+                                <action behavior="Fade" id="1" name="Start fade" sid="6447240115227232" type="BackgroundSpace" />
                             </actions>
                         </event-block>
                         <event-block sid="7919006911939717">
@@ -960,15 +955,46 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="3772811212084449" title="Input">
+        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>
                         <condition id="1" name="On any key pressed" sid="2979259725047886" type="Keyboard" />
+                        <condition id="-14" name="Compare variable" sid="1551945187676102" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="-10" name="Set value" sid="764741337996967" type="Player">
+                            <param id="0" name="Instance variable">isFalling</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                         <action behavior="Platform" id="9" name="Set vector Y" sid="6661328157667306" type="Player">
                             <param id="0" name="Vector Y">-400</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="368518043575208" type="Player">
+                            <param id="0" name="Angle">330</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8377273849172055">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="6199912268993848" type="Player" />
+                        <condition id="-7" name="Compare instance variable" sid="1727543526649823" type="Player">
+                            <param id="0" name="Instance variable">isFalling</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="3624345340706673" type="Player">
+                            <param id="0" name="Instance variable">isFalling</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="6650614699754001" type="Player">
+                            <param id="0" name="Angle">30</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1076,7 +1102,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5625581531054905" title="Collision">
+        <event-group collapsed="1" description="" sid="5625581531054905" title="Collision">
             <sub-events>
                 <event-block sid="6229384262465646">
                     <conditions>
@@ -1172,6 +1198,38 @@
                         </action>
                         <action behavior="Solid" id="0" name="Set enabled" sid="9481362189218478" type="Obstacle">
                             <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6226104454996509" type="System">
+                            <param id="0" name="Variable">HeightLongMax</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8058687859824563" type="System">
+                            <param id="0" name="Variable">HeightLongMax2</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9184966953652075" type="System">
+                            <param id="0" name="Variable">HeightLongMin</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="3825407567436958" type="System">
+                            <param id="0" name="Variable">HeightLongMin2</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="7818015396912031" type="System">
+                            <param id="0" name="Variable">HeightShortMax</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="3875752967072956" type="System">
+                            <param id="0" name="Variable">HeightShortMax2</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5331223316139771" type="System">
+                            <param id="0" name="Variable">HeightShortMin</param>
+                            <param id="1" name="Value">HeightUnit</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5258871711745326" type="System">
+                            <param id="0" name="Variable">HeightShortMin2</param>
+                            <param id="1" name="Value">HeightUnit</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1292,7 +1350,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="9306876313081022" title="Memory">
+        <event-group collapsed="1" description="" sid="9306876313081022" title="Memory">
             <sub-events>
                 <event-block sid="846662023014867">
                     <conditions>
@@ -1357,7 +1415,7 @@
         </event-group>
         <event-group description="" sid="4233841121576778" title="Function">
             <sub-events>
-                <event-block disabled="1" sid="7105819477388895">
+                <event-block collapsed="1" disabled="1" sid="7105819477388895">
                     <conditions>
                         <condition id="0" name="On function" sid="157177591988215" type="Function">
                             <param id="0" name="Name">&quot;StartLeaderboard&quot;</param>
@@ -1487,26 +1545,78 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="4019165628742884">
+                <event-block disabled="1" sid="4019165628742884">
                     <conditions>
                         <condition id="0" name="On function" sid="5880032442562335" type="Function">
                             <param id="0" name="Name">&quot;CreatePipeShort&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="2005783568887901" type="System">
-                            <param id="0" name="Object to create">PipeShort</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + random(200, 400)</param>
-                            <param id="3" name="Y">PipeShort.Height / 2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="9735506331020326" type="System">
-                            <param id="0" name="Object to create">PipeShortFlip</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">PipeShort.X</param>
-                            <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
+                        <action id="-9" name="Set value" sid="4011070964629749" type="System">
+                            <param id="0" name="Variable">HeightVariation</param>
+                            <param id="1" name="Value">floor(random(0, 2))</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="8631424904924572">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8066283353065464" type="System">
+                                    <param id="0" name="Variable">HeightVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2005783568887901" type="System">
+                                    <param id="0" name="Object to create">PipeShort</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">(LayoutWidth + random(200, 400)) - (Speed / 5 * dt)</param>
+                                    <param id="3" name="Y">PipeShort.Height / 2</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="2317184480657006" type="PipeShort">
+                                    <param id="0" name="Height">random(HeightShortMin, HeightShortMax)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="9735506331020326" type="System">
+                                    <param id="0" name="Object to create">PipeShortFlip</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">PipeShort.X</param>
+                                    <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="9447710487343834" type="PipeShortFlip">
+                                    <param id="0" name="Height">random(HeightShortMin2, HeightShortMax2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9345708715604567">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3976673566740419" type="System">
+                                    <param id="0" name="Variable">HeightVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="9543731828110239" type="System">
+                                    <param id="0" name="Object to create">PipeShort</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">(LayoutWidth + random(200, 400)) - (Speed / 5 * dt)</param>
+                                    <param id="3" name="Y">PipeShort.Height / 2</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="4423563437336146" type="PipeShort">
+                                    <param id="0" name="Height">random(HeightShortMin2, HeightShortMax2)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4026384316554716" type="System">
+                                    <param id="0" name="Object to create">PipeShortFlip</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">PipeShort.X</param>
+                                    <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="7081239679235224" type="PipeShortFlip">
+                                    <param id="0" name="Height">random(HeightShortMin, HeightShortMax)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="7165941636159493">
                     <conditions>
@@ -1515,19 +1625,71 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="1208989904484169" type="System">
-                            <param id="0" name="Object to create">PipeShort</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + random(200, 400)</param>
-                            <param id="3" name="Y">PipeShort.Height / 2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="7069781424687582" type="System">
-                            <param id="0" name="Object to create">PipeLongFlip</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">PipeShort.X</param>
-                            <param id="3" name="Y">LayoutHeight - (PipeLongFlip.Height / 2)</param>
+                        <action id="-9" name="Set value" sid="2350599772403459" type="System">
+                            <param id="0" name="Variable">HeightVariation</param>
+                            <param id="1" name="Value">floor(random(0, 2))</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="8823447245529933">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="382548001108333" type="System">
+                                    <param id="0" name="Variable">HeightVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1208989904484169" type="System">
+                                    <param id="0" name="Object to create">PipeShort</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">(LayoutWidth + random(200, 400)) - (Speed / 5 * dt)</param>
+                                    <param id="3" name="Y">PipeShort.Height / 2</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="5949049122508428" type="PipeShort">
+                                    <param id="0" name="Height">random(HeightShortMin, HeightShortMax)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="7069781424687582" type="System">
+                                    <param id="0" name="Object to create">PipeLongFlip</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">PipeShort.X</param>
+                                    <param id="3" name="Y">LayoutHeight - (PipeLongFlip.Height / 2)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="4773062152650377" type="PipeLongFlip">
+                                    <param id="0" name="Height">random(HeightLongMin2, HeightLongMax2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2418356838402735">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1014050830227734" type="System">
+                                    <param id="0" name="Variable">HeightVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1948147910476621" type="System">
+                                    <param id="0" name="Object to create">PipeShort</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">(LayoutWidth + random(200, 400)) - (Speed / 5 * dt)</param>
+                                    <param id="3" name="Y">PipeShort.Height / 2</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="3735525943495211" type="PipeShort">
+                                    <param id="0" name="Height">random(HeightShortMin2, HeightShortMax2)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="7742010562916733" type="System">
+                                    <param id="0" name="Object to create">PipeLongFlip</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">PipeShort.X</param>
+                                    <param id="3" name="Y">LayoutHeight - (PipeLongFlip.Height / 2)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="2173661279310175" type="PipeLongFlip">
+                                    <param id="0" name="Height">random(HeightLongMin, HeightLongMax)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="9340019348510102">
                     <conditions>
@@ -1536,19 +1698,71 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="1394473672422936" type="System">
-                            <param id="0" name="Object to create">PipeLong</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">LayoutWidth + random(200, 400)</param>
-                            <param id="3" name="Y">PipeLong.Height / 2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="645936157675272" type="System">
-                            <param id="0" name="Object to create">PipeShortFlip</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">PipeLong.X</param>
-                            <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
+                        <action id="-9" name="Set value" sid="137905127394039" type="System">
+                            <param id="0" name="Variable">HeightVariation</param>
+                            <param id="1" name="Value">floor(random(0, 2))</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="3748453858843951">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7689026553520906" type="System">
+                                    <param id="0" name="Variable">HeightVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1394473672422936" type="System">
+                                    <param id="0" name="Object to create">PipeLong</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">(LayoutWidth + random(200, 400)) - (Speed / 5 * dt)</param>
+                                    <param id="3" name="Y">PipeLong.Height / 2</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="9622754428997269" type="PipeLong">
+                                    <param id="0" name="Height">random(HeightLongMin, HeightLongMax)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="645936157675272" type="System">
+                                    <param id="0" name="Object to create">PipeShortFlip</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">PipeLong.X</param>
+                                    <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="8750290668347731" type="PipeShortFlip">
+                                    <param id="0" name="Height">random(HeightShortMin2, HeightShortMax2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6869484764397308">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7130393988306937" type="System">
+                                    <param id="0" name="Variable">HeightVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7277911267369076" type="System">
+                                    <param id="0" name="Object to create">PipeLong</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">(LayoutWidth + random(200, 400)) - (Speed / 5 * dt)</param>
+                                    <param id="3" name="Y">PipeLong.Height / 2</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="3894001196368756" type="PipeLong">
+                                    <param id="0" name="Height">random(HeightLongMin2, HeightLongMax2)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4285956013847461" type="System">
+                                    <param id="0" name="Object to create">PipeShortFlip</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">PipeLong.X</param>
+                                    <param id="3" name="Y">LayoutHeight - (PipeShortFlip.Height / 2)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="465333005386414" type="PipeShortFlip">
+                                    <param id="0" name="Height">random(HeightShortMin, HeightShortMax)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="7623914870690983">
                     <conditions>

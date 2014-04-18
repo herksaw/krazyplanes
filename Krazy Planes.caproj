@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.2.9a</version>
+    <version>0.0.3.0</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -85,11 +85,13 @@
         <object-type name="Plane" sid="3344237645055089">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="5053048256077534" speed="0">
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="5053048256077534" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501577" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -235,7 +237,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7445389449185938" speed="0">
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501538" hotspotY="0.502128" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -243,8 +245,8 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6204978213309477" speed="0">
-                    <frame duration="1" hotspotX="0.500935" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500935" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -252,8 +254,8 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3071031255402489" speed="0">
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -261,8 +263,8 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4937940138154132" speed="0">
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.500901" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -396,6 +398,24 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="ChoosePlane5" sid="4640586373063152">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="123892897279494" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChoosePlane6" sid="3626647055907683">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8929450190361545" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="7112896616641586">
@@ -404,6 +424,7 @@
             </members>
             <instance-variables>
                 <instance-variable name="frame" sid="8975771689627949" type="number" />
+                <instance-variable name="isFalling" sid="5941140707615378" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="6773605789435345">
@@ -472,6 +493,8 @@
                 <member>ChoosePlane2</member>
                 <member>ChoosePlane3</member>
                 <member>ChoosePlane4</member>
+                <member>ChoosePlane5</member>
+                <member>ChoosePlane6</member>
             </members>
             <behaviors>
                 <behavior-type name="8Direction" sid="6991602658571252">

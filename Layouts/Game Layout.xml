@@ -183,6 +183,7 @@
                     </properties>
                     <instance-variables>
                         <frame>0</frame>
+                        <isFalling>0</isFalling>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
