@@ -26,6 +26,7 @@
         <variable constant="0" name="IsBonusLevel" sid="9971066634741977" static="0" type="number">0</variable>
         <variable constant="0" name="Background" sid="67262966032393" static="0" type="number">0</variable>
         <variable constant="0" name="isPaused" sid="8789961767725841" static="0" type="number">0</variable>
+        <variable constant="0" name="StoredScore" sid="4822975824921017" static="0" type="number">0</variable>
         <variable constant="0" name="PlayerScore" sid="5154908271582909" static="0" type="number">0</variable>
         <variable constant="0" name="PipeVariation" sid="7581905702786113" static="0" type="number">0</variable>
         <event-group collapsed="1" description="" sid="6778598484776996" title="Debug">
@@ -82,6 +83,32 @@
         </event-group>
         <event-group collapsed="1" description="" sid="1152087620458756" title="System">
             <sub-events>
+                <event-block sid="7871331523120146">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="1711327255055747" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="2820134713613353" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1572268299590553">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="2776697818519001" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9919382869758564" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">WebStorage.LocalValue(&quot;score&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="9852792807390658">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="5755246441163918" type="System" />
@@ -955,7 +982,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
+        <event-group description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>
@@ -967,6 +994,9 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-8" name="Set angle" sid="368518043575208" type="Player">
+                            <param id="0" name="Angle">330</param>
+                        </action>
                         <action id="-10" name="Set value" sid="764741337996967" type="Player">
                             <param id="0" name="Instance variable">isFalling</param>
                             <param id="1" name="Value">0</param>
@@ -974,8 +1004,27 @@
                         <action behavior="Platform" id="9" name="Set vector Y" sid="6661328157667306" type="Player">
                             <param id="0" name="Vector Y">-400</param>
                         </action>
-                        <action id="-8" name="Set angle" sid="368518043575208" type="Player">
+                    </actions>
+                </event-block>
+                <event-block sid="6743464553815323">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="3088659446496117" type="Touch" />
+                        <condition id="-14" name="Compare variable" sid="1419830059165917" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="5378054420382176" type="Player">
                             <param id="0" name="Angle">330</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5237005531064391" type="Player">
+                            <param id="0" name="Instance variable">isFalling</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="5606101873572429" type="Player">
+                            <param id="0" name="Vector Y">-400</param>
                         </action>
                     </actions>
                 </event-block>
@@ -994,17 +1043,7 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-8" name="Set angle" sid="6650614699754001" type="Player">
-                            <param id="0" name="Angle">30</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6743464553815323">
-                    <conditions>
-                        <condition id="1" name="On any touch end" sid="3088659446496117" type="Touch" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="5606101873572429" type="Player">
-                            <param id="0" name="Vector Y">-400</param>
+                            <param id="0" name="Angle">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1413,7 +1452,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4233841121576778" title="Function">
+        <event-group collapsed="1" description="" sid="4233841121576778" title="Function">
             <sub-events>
                 <event-block collapsed="1" disabled="1" sid="7105819477388895">
                     <conditions>
@@ -1494,6 +1533,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Set local value" sid="6682779639188587" type="WebStorage">
+                                    <param id="0" name="Key">&quot;score&quot;</param>
+                                    <param id="1" name="Value">StoredScore + PlayerScore</param>
+                                </action>
                                 <action id="3" name="Post Leaderboard Score" sid="7905013447434745" type="Clayio">
                                     <param id="0" name="Player Name">Facebook.FullName</param>
                                     <param id="1" name="Player Score">PlayerScore</param>
@@ -1516,6 +1559,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Set local value" sid="8602149224438203" type="WebStorage">
+                                    <param id="0" name="Key">&quot;score&quot;</param>
+                                    <param id="1" name="Value">StoredScore + PlayerScore</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="6671930002755112" type="System">
                                     <param id="0" name="Variable">HasPostedScore</param>
                                     <param id="1" name="Value">1</param>
@@ -1545,7 +1592,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block disabled="1" sid="4019165628742884">
+                <event-block collapsed="1" disabled="1" sid="4019165628742884">
                     <conditions>
                         <condition id="0" name="On function" sid="5880032442562335" type="Function">
                             <param id="0" name="Name">&quot;CreatePipeShort&quot;</param>
@@ -1618,7 +1665,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7165941636159493">
+                <event-block collapsed="1" sid="7165941636159493">
                     <conditions>
                         <condition id="0" name="On function" sid="6989412614493768" type="Function">
                             <param id="0" name="Name">&quot;CreatePipeShortLong&quot;</param>
@@ -1691,7 +1738,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="9340019348510102">
+                <event-block collapsed="1" sid="9340019348510102">
                     <conditions>
                         <condition id="0" name="On function" sid="9125959762946678" type="Function">
                             <param id="0" name="Name">&quot;CreatePipeLongShort&quot;</param>

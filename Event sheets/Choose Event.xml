@@ -3,451 +3,726 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Choose Event</name>
     <events>
+        <variable constant="0" name="PlanePoints2" sid="6871360435101389" static="0" type="number">1200</variable>
+        <variable constant="0" name="PlanePoints3" sid="312050437251667" static="0" type="number">2600</variable>
+        <variable constant="0" name="PlanePoints4" sid="5968584069754467" static="0" type="number">3500</variable>
+        <variable constant="0" name="PlanePoints5" sid="8297701410112563" static="0" type="number">6600</variable>
+        <variable constant="0" name="PlanePoints6" sid="7285143862969525" static="0" type="number">8000</variable>
         <variable constant="0" name="ChosenPlane" sid="3653101471500186" static="0" type="number">0</variable>
-        <variable constant="0" name="is2Unlocked" sid="7527535077381872" static="0" type="number">0</variable>
-        <variable constant="0" name="is3Unlocked" sid="4732607278837842" static="0" type="number">0</variable>
-        <variable constant="0" name="is4Unlocked" sid="6007096538751151" static="0" type="number">0</variable>
-        <event-block disabled="1" sid="2732210742578333">
+        <event-block sid="2042729773746897">
             <conditions>
-                <condition id="-3" name="Is on-screen" sid="6686216327093555" type="ChoosePlane" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="2377465353468264" type="BoxDebug">
-                    <param id="0" name="Text">&quot;Plane:&quot; &amp; ChosenPlane</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block collapsed="1" disabled="1" sid="3272758662718585">
-            <conditions>
-                <condition id="-20" name="Is on mobile device" sid="6041791145685216" type="System" />
+                <condition id="-2" name="On start of layout" sid="4983765496997134" type="System" />
             </conditions>
             <actions />
             <sub-events>
-                <event-block disabled="1" sid="8174020845546809">
+                <event-block sid="6874944945832118">
                     <conditions>
-                        <condition id="3" name="On touched object" sid="807298320649563" type="Touch">
-                            <param id="0" name="Object">ChooseRight</param>
+                        <condition id="3" name="Local key exists" sid="4016237198234932" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="5745481811672201" type="ChooseRight">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="1660896344894589" type="ChooseLeft">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action behavior="8Direction" id="9" name="Set vector X" sid="2988446872628867" type="ChoosePlane">
-                            <param id="0" name="Vector X">-1775</param>
+                        <action id="-9" name="Set value" sid="1410705831201446" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">WebStorage.LocalValue(&quot;score&quot;)</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block disabled="1" sid="3819376528704412">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="8986377817106091" type="Touch">
-                            <param id="0" name="Object">ChooseLeft</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="9841611861483078" type="ChooseRight">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="9336346518688793" type="ChooseLeft">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action behavior="8Direction" id="9" name="Set vector X" sid="4671955629514073" type="ChoosePlane">
-                            <param id="0" name="Vector X">1775</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="4561841583930805">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="4524590425456227" type="Touch">
-                            <param id="0" name="Object">ButtonPlay</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="7461601269872311">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="4307332539773389" type="ChoosePlane1" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="900167235337709" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="2793627114009625" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="9255522005140397">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="8612570725835704" type="ChoosePlane2" />
-                                <condition id="-14" name="Compare variable" sid="3530183849481688" type="System">
-                                    <param id="0" name="Variable">is2Unlocked</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="7892605869249711" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="3942799970184144" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="1304272042204566">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="9226843461267482" type="ChoosePlane3" />
-                                <condition id="-14" name="Compare variable" sid="708693365605476" type="System">
-                                    <param id="0" name="Variable">is3Unlocked</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="1623946589959364" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">3</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="4712315188645027" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="1525047601568629">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="8670632908655628" type="ChoosePlane4" />
-                                <condition id="-14" name="Compare variable" sid="7331235680559236" type="System">
-                                    <param id="0" name="Variable">is4Unlocked</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="6500296335022068" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">4</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="8676254575277072" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block collapsed="1" disabled="1" sid="3273565544309718">
+        <event-block sid="4114885923822311">
             <conditions>
-                <condition id="-22" name="Else" sid="7723992673514542" type="System" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="8382526144735931">
-                    <conditions>
-                        <condition id="6" name="On object clicked" sid="5564697670841695" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">ChooseRight</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="1162297045139896" type="ChooseRight">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="4008269205279905" type="ChooseLeft">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action behavior="8Direction" id="9" name="Set vector X" sid="6864699478492606" type="ChoosePlane">
-                            <param id="0" name="Vector X">-1775</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="5935362036856969">
-                    <conditions>
-                        <condition id="6" name="On object clicked" sid="779490833144718" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">ChooseLeft</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="9290919439116479" type="ChooseRight">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="5827381248947636" type="ChooseLeft">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action behavior="8Direction" id="9" name="Set vector X" sid="6037682919811261" type="ChoosePlane">
-                            <param id="0" name="Vector X">1775</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="6632654797840284">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="3352575901409409" type="Keyboard">
-                            <param id="0" name="Key">39 (Right arrow)</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="1752950124224499" type="ChooseRight" />
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="3379548055841283" type="ChooseRight">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="9223576921149015" type="ChooseLeft">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action behavior="8Direction" id="9" name="Set vector X" sid="2100389105124931" type="ChoosePlane">
-                            <param id="0" name="Vector X">-1775</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="9983468189386003">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="7230136030720905" type="Keyboard">
-                            <param id="0" name="Key">37 (Left arrow)</param>
-                        </condition>
-                        <condition id="-9" name="Is visible" sid="4602772014115592" type="ChooseLeft" />
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="1500271413666439" type="ChooseRight">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="4975836420698288" type="ChooseLeft">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action behavior="8Direction" id="9" name="Set vector X" sid="2532536011865251" type="ChoosePlane">
-                            <param id="0" name="Vector X">1775</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="3035158652290815">
-                    <conditions>
-                        <condition id="6" name="On object clicked" sid="3995952935970515" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">ButtonPlay</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="1209435907880066">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="8509126930195742" type="ChoosePlane1" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="1084229259075901" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="1312942838806205" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="9698388045371104">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="4203774708388292" type="ChoosePlane2" />
-                                <condition id="-14" name="Compare variable" sid="1182731531393422" type="System">
-                                    <param id="0" name="Variable">is2Unlocked</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="5763572548376175" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">2</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="6461212597066237" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="7375881968989383">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="2883855849064223" type="ChoosePlane3" />
-                                <condition id="-14" name="Compare variable" sid="9548894436299159" type="System">
-                                    <param id="0" name="Variable">is3Unlocked</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="9210644501886255" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">3</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="3910376128826362" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="5715072907286874">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="9313488735330248" type="ChoosePlane4" />
-                                <condition id="-14" name="Compare variable" sid="3649011040691923" type="System">
-                                    <param id="0" name="Variable">is4Unlocked</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="6170640751317192" type="System">
-                                    <param id="0" name="Variable">ChosenPlane</param>
-                                    <param id="1" name="Value">4</param>
-                                </action>
-                                <action id="-2" name="Go to layout" sid="8738342081847747" type="System">
-                                    <param id="0" name="Layout">Game Layout</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block disabled="1" sid="1207024854075894">
-            <conditions>
-                <condition id="-3" name="Is on-screen" sid="7550289322610037" type="ChoosePlane" />
-                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5141658665815417" type="ChoosePlane" />
+                <condition id="-1" name="Every tick" sid="5837758419407506" type="System" />
             </conditions>
             <actions>
-                <action id="-1" name="Set X" sid="9478567436695386" type="ChoosePlane">
-                    <param id="0" name="X">LayoutWidth / 2</param>
+                <action id="0" name="Set text" sid="4269681228571828" type="BoxPoints">
+                    <param id="0" name="Text">&quot;Points: &quot; &amp; StoredScore</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="4650595061798251">
+        <event-block sid="1715198393669708">
             <conditions>
-                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="1444881155139449" type="ChoosePlane" />
+                <condition id="6" name="Compare key value (as text)" sid="6394908033234182" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane2&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="6970253539772238" type="ChooseRight">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="2226848377098346" type="ChooseLeft">
-                    <param id="0" name="Visibility">1</param>
+                <action id="5" name="Set frame" sid="4640752084138464" type="ChoosePlane2">
+                    <param id="0" name="Frame number">0</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="2798413913385896">
+        <event-block sid="1760260743626612">
             <conditions>
-                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5129578481873706" type="ChoosePlane" />
+                <condition id="6" name="Compare key value (as text)" sid="7254821018640712" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane3&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="3944601769850688" type="ChooseRight">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="726927250938696" type="ChooseLeft">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="1562079890147288">
-            <conditions>
-                <condition id="-4" name="Is outside layout" sid="9144231082783563" type="ChoosePlane1" />
-                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5843935672827131" type="ChoosePlane" />
-            </conditions>
-            <actions>
-                <action id="-15" name="Set visible" sid="9509696501003587" type="ChooseLeft">
-                    <param id="0" name="Visibility">1</param>
+                <action id="5" name="Set frame" sid="7779852425862493" type="ChoosePlane3">
+                    <param id="0" name="Frame number">0</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="2528991411124244">
+        <event-block sid="7512892067547311">
             <conditions>
-                <condition id="-3" name="Is on-screen" sid="1545605137376347" type="ChoosePlane1" />
+                <condition id="6" name="Compare key value (as text)" sid="6533502304481688" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane4&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="5788803286449852" type="ChooseLeft">
+                <action id="5" name="Set frame" sid="2294594491532776" type="ChoosePlane4">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2904218513487127">
+            <conditions>
+                <condition id="6" name="Compare key value (as text)" sid="6626164164486515" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane5&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="5518426666162501" type="ChoosePlane5">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="39038085537425">
+            <conditions>
+                <condition id="6" name="Compare key value (as text)" sid="8843062208655428" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane6&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="9678147030840169" type="ChoosePlane6">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="280433028058956">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5551622112886174" type="Touch">
+                    <param id="0" name="Object">ChoosePlane2</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="9767024211032386" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane2&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="9481231668239483" type="ButtonUnlock2" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="1779510958658254" type="ChoosePlane2">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="0" name="Set text" sid="8671390170741078" type="ChooseText2">
+                    <param id="0" name="Text">PlanePoints2 &amp; &quot; Points&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7074276101044133" type="ChooseText2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8348845556296833" type="ChooseText3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6082401242443998" type="ChooseText4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9296801706016542" type="ChooseText5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5566270920093257" type="ChooseText6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3832695552567561" type="ButtonUnlock2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6015437094537574" type="ButtonUnlock3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7382555929729649" type="ButtonUnlock4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="717350825517649" type="ButtonUnlock5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1836217010949639" type="ButtonUnlock6">
                     <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="3254386939889265">
+        <event-block sid="7523542129754821">
             <conditions>
-                <condition id="-3" name="Is on-screen" sid="4895771273227862" type="ChoosePlane4" />
+                <condition id="3" name="On touched object" sid="2726297576436758" type="Touch">
+                    <param id="0" name="Object">ChoosePlane3</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="414655133218285" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane3&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="1212429363535752" type="ButtonUnlock3" />
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="774831630332684" type="ChooseRight">
+                <action id="5" name="Set frame" sid="7611682684607138" type="ChoosePlane3">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="0" name="Set text" sid="8769290860305621" type="ChooseText3">
+                    <param id="0" name="Text">PlanePoints3 &amp; &quot; Points&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="943820126676045" type="ChooseText2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4811271007357414" type="ChooseText3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="457548819947069" type="ChooseText4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1048064834833769" type="ChooseText5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9172579075910802" type="ChooseText6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2111120676516933" type="ButtonUnlock2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8093356439521958" type="ButtonUnlock3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2848986302534767" type="ButtonUnlock4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="437274884835524" type="ButtonUnlock5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="655755171622434" type="ButtonUnlock6">
                     <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="8947429499761366">
+        <event-block sid="2930521458841814">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="9944390774103956" type="System">
-                    <param id="0" name="Variable">is2Unlocked</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
+                <condition id="3" name="On touched object" sid="8993121813217897" type="Touch">
+                    <param id="0" name="Object">ChoosePlane4</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="2589825461851118" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane4&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="2475724470164474" type="ButtonUnlock4" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="7785913160378978" type="ChoosePlane4">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="0" name="Set text" sid="7687835065420598" type="ChooseText4">
+                    <param id="0" name="Text">PlanePoints4 &amp; &quot; Points&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3157196602043274" type="ChooseText2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2046064564134576" type="ChooseText3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="836229937598698" type="ChooseText4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4018741139881273" type="ChooseText5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3021640825526326" type="ChooseText6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2305863030822205" type="ButtonUnlock2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2696628161039909" type="ButtonUnlock3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1739692770278589" type="ButtonUnlock4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4068274441231991" type="ButtonUnlock5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5519235373783437" type="ButtonUnlock6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="191529121372569">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6344820224446389" type="Touch">
+                    <param id="0" name="Object">ChoosePlane5</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="5831988749654558" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane5&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="3171388577825391" type="ButtonUnlock5" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="4666506259085006" type="ChoosePlane5">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2703090638649283" type="ChooseText5">
+                    <param id="0" name="Text">PlanePoints5 &amp; &quot; Points&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4996936791281604" type="ChooseText2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5203890791189904" type="ChooseText3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5128530485755356" type="ChooseText4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="118804354078385" type="ChooseText5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2836667514439397" type="ChooseText6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="236076266739766" type="ButtonUnlock2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5797357894122063" type="ButtonUnlock3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1456096883137268" type="ButtonUnlock4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="795261839409888" type="ButtonUnlock5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="858497123730756" type="ButtonUnlock6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1186709465202261">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8509095540451944" type="Touch">
+                    <param id="0" name="Object">ChoosePlane6</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="4400048338681516" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane6&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="2954889910348211" type="ButtonUnlock6" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="5115622632977971" type="ChoosePlane6">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="0" name="Set text" sid="4765123875676442" type="ChooseText6">
+                    <param id="0" name="Text">PlanePoints6 &amp; &quot; Points&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2286897828075274" type="ChooseText2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1730947491696624" type="ChooseText3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9785993075212241" type="ChooseText4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9902771259465391" type="ChooseText5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1436489468416383" type="ChooseText6">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3689935929428375" type="ButtonUnlock2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5889610020221779" type="ButtonUnlock3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1018146861796036" type="ButtonUnlock4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8462163348208332" type="ButtonUnlock5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2829540064301346" type="ButtonUnlock6">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3149763804592068">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3412871251193618" type="Touch">
+                    <param id="0" name="Object">ButtonUnlock2</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="1405048375307176" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane2&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="9316191507834247" type="ButtonUnlock2" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6253860365880755">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8565082595429154" type="System">
+                            <param id="0" name="Variable">PlanePoints2</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">StoredScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="342848006146626" type="WebStorage">
+                            <param id="0" name="Key">&quot;plane2&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7355795456497716" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">PlanePoints2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="3896477499234602" type="ChoosePlane2">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8482305412818281" type="ButtonUnlock2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8035753765977748" type="ChooseText2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="6577970497353643" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                            <param id="1" name="Value">StoredScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="993931358239173">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1690330464975273" type="Touch">
+                    <param id="0" name="Object">ButtonUnlock3</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="1685624145278565" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane3&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="9742004722710249" type="ButtonUnlock3" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2890417731582966">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1955055023684829" type="System">
+                            <param id="0" name="Variable">PlanePoints3</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">StoredScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="2118113274176733" type="WebStorage">
+                            <param id="0" name="Key">&quot;plane3&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7141461090972665" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">PlanePoints3</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="1279874914841816" type="ChoosePlane3">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8579734448412236" type="ButtonUnlock3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4832407159863005" type="ChooseText3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="1508261479806308" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                            <param id="1" name="Value">StoredScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8701825811596071">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6215001768454661" type="Touch">
+                    <param id="0" name="Object">ButtonUnlock4</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="6924305506161305" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane4&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="1439470155883242" type="ButtonUnlock4" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3735656552655677">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4912467854629256" type="System">
+                            <param id="0" name="Variable">PlanePoints4</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">StoredScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="2744134176781033" type="WebStorage">
+                            <param id="0" name="Key">&quot;plane4&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="9076685747037536" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">PlanePoints4</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="3732196987751585" type="ChoosePlane4">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7691381590816933" type="ButtonUnlock4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2590678605197564" type="ChooseText4">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="4626084681829287" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                            <param id="1" name="Value">StoredScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6181754800842711">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5501478406871669" type="Touch">
+                    <param id="0" name="Object">ButtonUnlock5</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="1278947505545167" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane5&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="9607247978712867" type="ButtonUnlock5" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="567475355087453">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8650619505443735" type="System">
+                            <param id="0" name="Variable">PlanePoints5</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">StoredScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="7623504978402251" type="WebStorage">
+                            <param id="0" name="Key">&quot;plane5&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7084243906520411" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">PlanePoints5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="6333609757770438" type="ChoosePlane5">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3442967564059637" type="ButtonUnlock5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8030848565250779" type="ChooseText5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="1878452637455113" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                            <param id="1" name="Value">StoredScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7670298519947126">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5031582475305898" type="Touch">
+                    <param id="0" name="Object">ButtonUnlock6</param>
+                </condition>
+                <condition id="6" inverted="1" name="Compare key value (as text)" sid="1239157110513665" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane6&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="9264659816940409" type="ButtonUnlock6" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1471961340643737">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1753056376869132" type="System">
+                            <param id="0" name="Variable">PlanePoints6</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">StoredScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="3214668143883253" type="WebStorage">
+                            <param id="0" name="Key">&quot;plane6&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="455556299586716" type="System">
+                            <param id="0" name="Variable">StoredScore</param>
+                            <param id="1" name="Value">PlanePoints6</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="6001856957065681" type="ChoosePlane6">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="85371732103928" type="ButtonUnlock6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4958547211765125" type="ChooseText6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="5900817157916208" type="WebStorage">
+                            <param id="0" name="Key">&quot;score&quot;</param>
+                            <param id="1" name="Value">StoredScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5007302087165593">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9259557592721966" type="Touch">
+                    <param id="0" name="Object">ChoosePlane1</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="8115661038261917" type="ChoosePlane2">
-                    <param id="0" name="Frame number">0</param>
+                <action id="0" name="Set local value" sid="3468432922895572" type="WebStorage">
+                    <param id="0" name="Key">&quot;score&quot;</param>
+                    <param id="1" name="Value">PlayerScore</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="6084361438708561" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="2740022217150345">
+        <event-block sid="6530410244813779">
             <conditions>
-                <condition id="-22" name="Else" sid="8365002276271013" type="System" />
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="3898021538644863" type="ChoosePlane2">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="1954453889945347">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="9202446259489328" type="System">
-                    <param id="0" name="Variable">is3Unlocked</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
+                <condition id="3" name="On touched object" sid="8953034549739767" type="Touch">
+                    <param id="0" name="Object">ChoosePlane2</param>
+                </condition>
+                <condition id="6" name="Compare key value (as text)" sid="1102064934500628" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane2&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="347131938761765" type="ChoosePlane3">
-                    <param id="0" name="Frame number">0</param>
+                <action id="0" name="Set local value" sid="162047924633214" type="WebStorage">
+                    <param id="0" name="Key">&quot;score&quot;</param>
+                    <param id="1" name="Value">PlayerScore</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="9871088313055631" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="6886331077931621">
+        <event-block sid="7702293499692302">
             <conditions>
-                <condition id="-22" name="Else" sid="9456286269387497" type="System" />
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="974066532938032" type="ChoosePlane3">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="1071080818993363">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="6901528664438198" type="System">
-                    <param id="0" name="Variable">is4Unlocked</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
+                <condition id="3" name="On touched object" sid="5088832737632539" type="Touch">
+                    <param id="0" name="Object">ChoosePlane3</param>
+                </condition>
+                <condition id="6" name="Compare key value (as text)" sid="6105253966641941" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane3&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="7936182832655561" type="ChoosePlane4">
-                    <param id="0" name="Frame number">0</param>
+                <action id="0" name="Set local value" sid="6100966044757274" type="WebStorage">
+                    <param id="0" name="Key">&quot;score&quot;</param>
+                    <param id="1" name="Value">PlayerScore</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="7120165973956527" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
                 </action>
             </actions>
         </event-block>
-        <event-block disabled="1" sid="5197529077323047">
+        <event-block sid="1119011650629316">
             <conditions>
-                <condition id="-22" name="Else" sid="1420253934395537" type="System" />
+                <condition id="3" name="On touched object" sid="6601225273291166" type="Touch">
+                    <param id="0" name="Object">ChoosePlane4</param>
+                </condition>
+                <condition id="6" name="Compare key value (as text)" sid="3105690314451458" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane4&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="1572506070764285" type="ChoosePlane4">
-                    <param id="0" name="Frame number">1</param>
+                <action id="0" name="Set local value" sid="3506971002355956" type="WebStorage">
+                    <param id="0" name="Key">&quot;score&quot;</param>
+                    <param id="1" name="Value">PlayerScore</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="3916748130698913" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9704003340150018">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9804863343317636" type="Touch">
+                    <param id="0" name="Object">ChoosePlane5</param>
+                </condition>
+                <condition id="6" name="Compare key value (as text)" sid="6907171210581076" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane5&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="2787407075244523" type="WebStorage">
+                    <param id="0" name="Key">&quot;score&quot;</param>
+                    <param id="1" name="Value">PlayerScore</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="888012345947317" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5871859285231075">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9922961134786475" type="Touch">
+                    <param id="0" name="Object">ChoosePlane6</param>
+                </condition>
+                <condition id="6" name="Compare key value (as text)" sid="62263345408371" type="WebStorage">
+                    <param id="0" name="Key">&quot;plane6&quot;</param>
+                    <param id="1" name="Text to compare">&quot;true&quot;</param>
+                    <param id="2" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="3723460500751695" type="WebStorage">
+                    <param id="0" name="Key">&quot;score&quot;</param>
+                    <param id="1" name="Value">PlayerScore</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4043924920242236" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
                 </action>
             </actions>
         </event-block>

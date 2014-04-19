@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>0.0.3.0</version>
+    <version>0.0.4.2</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -237,7 +237,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7445389449185938" speed="0">
-                    <frame duration="1" hotspotX="0.501538" hotspotY="0.502128" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -245,7 +245,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6204978213309477" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504348" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -254,7 +254,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3071031255402489" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504348" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -263,7 +263,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4937940138154132" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504348" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -402,7 +402,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="123892897279494" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504348" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -411,7 +411,65 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8929450190361545" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.502183" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504348" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ChooseText2" sid="7082802390791894">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ChooseText3" sid="550755130687042">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ChooseText4" sid="4516893349940205">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ChooseText5" sid="5768390116123783">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ChooseText6" sid="1916313188232211">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BoxPoints" sid="3119084273162944">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ButtonUnlock2" sid="5645204752520475">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5232836770461387" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonUnlock3" sid="3235635026835965">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1645324930356191" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonUnlock4" sid="97060286833788">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9089094061731221" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonUnlock5" sid="8854015837180103">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6990951612820769" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonUnlock6" sid="9200873261703566">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2335794291150228" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
