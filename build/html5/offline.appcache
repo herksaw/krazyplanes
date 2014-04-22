@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1398164010
+#1398174211
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -36,7 +36,7 @@ images\loadingtext-sheet0.png
 images\loginanonymous-sheet0.png
 images\loginfacebook-sheet0.png
 images\logintext-sheet0.png
-images\scorestext-sheet0.png
+images\textscores-sheet0.png
 images\planet1-sheet0.png
 images\planet2-sheet0.png
 images\planet3-sheet0.png
@@ -46,6 +46,8 @@ images\buttonunlock2-sheet0.png
 images\buttonbuy2-sheet0.png
 images\koolstufftext-sheet0.png
 images\buttonback-sheet0.png
+images\textlogin-sheet0.png
+images\textkoolstuff-sheet0.png
 icon-16.png
 icon-32.png
 icon-114.png

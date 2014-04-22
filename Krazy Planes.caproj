@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0c build30</version>
+    <version>1.0c build31</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -356,11 +356,11 @@
         <object-type name="WebStorage" sid="3987505423383155">
             <plugin id="WebStorage" />
         </object-type>
-        <object-type name="ScoresText" sid="284692843514701">
+        <object-type name="TextScores" sid="284692843514701">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2517650692427744" speed="5">
-                    <frame duration="1" hotspotX="0.501205" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501211" hotspotY="0.502959" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -523,6 +523,22 @@
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6701460128124838" speed="5">
                     <frame duration="1" hotspotX="0.506849" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextLogin" sid="7616396245904122">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5427558333145165" speed="5">
+                    <frame duration="1" hotspotX="0.501416" hotspotY="0.503356" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextKoolStuff" sid="7565151703949889">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8308642439560379" speed="5">
+                    <frame duration="1" hotspotX="0.500736" hotspotY="0.503268" />
                 </animation>
             </animation-folder>
         </object-type>

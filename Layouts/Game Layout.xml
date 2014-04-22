@@ -121,6 +121,72 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="TextLogin" uid="67">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>273</x>
+                        <y>-537</y>
+                        <z>0</z>
+                        <width>353</width>
+                        <height>149</height>
+                        <depth>0</depth>
+                        <hotspotX>0.501416445</hotspotX>
+                        <hotspotY>0.503355682</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TextKoolStuff" uid="68">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>839</x>
+                        <y>-544</y>
+                        <z>0</z>
+                        <width>679</width>
+                        <height>153</height>
+                        <depth>0</depth>
+                        <hotspotX>0.500736356</hotspotX>
+                        <hotspotY>0.503268003</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TextScores" uid="69">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>981</x>
+                        <y>-790</y>
+                        <z>0</z>
+                        <width>413</width>
+                        <height>169</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50121063</hotspotX>
+                        <hotspotY>0.502958596</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -814,28 +880,6 @@
                         <height>250</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="ScoresText" uid="47">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1266.240966797</x>
-                        <y>50</y>
-                        <z>0</z>
-                        <width>200</width>
-                        <height>100</height>
-                        <depth>0</depth>
-                        <hotspotX>0.501204848</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>

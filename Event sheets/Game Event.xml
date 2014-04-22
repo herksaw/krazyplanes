@@ -29,7 +29,7 @@
         <variable constant="0" name="StoredScore" sid="4822975824921017" static="0" type="number">0</variable>
         <variable constant="0" name="PlayerScore" sid="5154908271582909" static="0" type="number">0</variable>
         <variable constant="0" name="PipeVariation" sid="7581905702786113" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="" sid="6778598484776996" title="Debug">
+        <event-group description="" sid="6778598484776996" title="Debug">
             <sub-events>
                 <event-block sid="1721528917534047">
                     <conditions>
@@ -292,7 +292,25 @@
                                 <condition behavior="Fade" id="0" name="On fade out finished" sid="8891493107639199" type="SpriteStartagain" />
                             </conditions>
                             <actions>
-                                <action behavior="Fade" id="0" name="Restart fade" sid="4310729885709227" type="SpriteStartagain" />
+                                <action behavior="Fade" disabled="1" id="0" name="Restart fade" sid="4310729885709227" type="SpriteStartagain" />
+                                <action id="-3" name="Create object" sid="1776786220801558" type="System">
+                                    <param id="0" name="Object to create">TextLogin</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="3" name="Y">LayoutHeight / 4</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="7992056730497591" type="System">
+                                    <param id="0" name="Object to create">TextScores</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="3" name="Y">LayoutHeight / 2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="3433637582954535" type="System">
+                                    <param id="0" name="Object to create">TextKoolStuff</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth / 2</param>
+                                    <param id="3" name="Y">LayoutHeight / 4 * 3</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="4879757645231549">
@@ -325,7 +343,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7984638284420198">
+                <event-block sid="7984638284420198">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9133696647138151" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -392,23 +410,9 @@
                         <action id="-26" name="Restart layout" sid="6698311130495306" type="System" />
                     </actions>
                 </event-block>
-                <event-block sid="1672671375181468">
-                    <conditions>
-                        <condition id="6" name="Compare key value (as text)" sid="4426098720564455" type="WebStorage">
-                            <param id="0" name="Key">&quot;facebook&quot;</param>
-                            <param id="1" name="Text to compare">&quot;true&quot;</param>
-                            <param id="2" name="Case sensitivity">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="497983858068978" type="ScoresText">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="7458157205288591" title="Level">
+        <event-group description="" sid="7458157205288591" title="Level">
             <sub-events>
                 <event-block sid="6717840333190424">
                     <conditions>
@@ -518,7 +522,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7441639988819879">
+                <event-block sid="7441639988819879">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="8077471659195611" type="System">
                             <param id="0" name="Variable">isPaused</param>
@@ -963,7 +967,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3772811212084449" title="Input">
+        <event-group description="" sid="3772811212084449" title="Input">
             <sub-events>
                 <event-block sid="7426984913654209">
                     <conditions>
@@ -1028,40 +1032,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3428146249511974">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="4992358740378747" type="Touch">
-                            <param id="0" name="Object">ScoresText</param>
-                        </condition>
-                        <condition id="6" name="Compare key value (as text)" sid="3495432055740052" type="WebStorage">
-                            <param id="0" name="Key">&quot;facebook&quot;</param>
-                            <param id="1" name="Text to compare">&quot;true&quot;</param>
-                            <param id="2" name="Case sensitivity">0</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="9929173829220597" type="System">
-                            <param id="0" name="Variable">IsLeaderboard</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action disabled="1" id="-9" name="Set value" sid="5780174657835909" type="System">
-                            <param id="0" name="Variable">isPaused</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="8696942608788086" type="System">
-                            <param id="0" name="Variable">IsLeaderboard</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="3545035623478648" type="System">
-                            <param id="0" name="Variable">isPaused</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="17" name="Open Leaderboard" sid="715231026611733" type="CocoonJS">
-                            <param id="0" name="Leaderboard">&quot;highScoreBoard&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="854569896536518">
                     <conditions>
                         <condition id="3" name="On touched object" sid="7681404182948927" type="Touch">
@@ -1092,7 +1062,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5625581531054905" title="Collision">
+        <event-group description="" sid="5625581531054905" title="Collision">
             <sub-events>
                 <event-block sid="6229384262465646">
                     <conditions>
@@ -1340,7 +1310,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="9306876313081022" title="Memory">
+        <event-group description="" sid="9306876313081022" title="Memory">
             <sub-events>
                 <event-block sid="846662023014867">
                     <conditions>
@@ -1403,7 +1373,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="4233841121576778" title="Function">
+        <event-group description="" sid="4233841121576778" title="Function">
             <sub-events>
                 <event-block sid="2598720755854978">
                     <conditions>
@@ -1472,7 +1442,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7165941636159493">
+                <event-block sid="7165941636159493">
                     <conditions>
                         <condition id="0" name="On function" sid="6989412614493768" type="Function">
                             <param id="0" name="Name">&quot;CreatePipeShortLong&quot;</param>
@@ -1545,7 +1515,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="9340019348510102">
+                <event-block sid="9340019348510102">
                     <conditions>
                         <condition id="0" name="On function" sid="9125959762946678" type="Function">
                             <param id="0" name="Name">&quot;CreatePipeLongShort&quot;</param>
@@ -1618,7 +1588,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7623914870690983">
+                <event-block sid="7623914870690983">
                     <conditions>
                         <condition id="0" name="On function" sid="5665857847309095" type="Function">
                             <param id="0" name="Name">&quot;MoveItem&quot;</param>
