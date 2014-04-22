@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1397879239
+#1397981305
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -56,5 +56,8 @@ comix%20loud.ttf
 comix%20loud.woff
 stylesheet.css
 channel.html
+Amazon-Web-App-API.min.js
+Amazon-Web-App-API-tester.min.js
+tizen-iap.js
 NETWORK:
 *

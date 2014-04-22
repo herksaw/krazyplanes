@@ -1,9 +1,9 @@
 Krazy Planes
 ============
 
-Alpha status. Beware of the bugs attack.
+Reached stable stage, but still some tweaks though.
 
 Version
 =======
 
-0.0.3.x
+1.x
