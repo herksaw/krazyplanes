@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0c build31</version>
+    <version>1.0c build32</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -428,7 +428,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5232836770461387" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.503311" hotspotY="0.507937" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -436,7 +436,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1645324930356191" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.503311" hotspotY="0.507937" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -444,7 +444,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9089094061731221" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.503311" hotspotY="0.507937" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -452,7 +452,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6990951612820769" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.503311" hotspotY="0.507937" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -460,7 +460,7 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2335794291150228" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.503311" hotspotY="0.507937" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -669,11 +669,6 @@
                 <member>ButtonBuy5</member>
                 <member>ButtonBuy6</member>
             </members>
-            <behaviors>
-                <behavior-type name="8Direction" sid="8212981824237773">
-                    <behavior id="EightDir" />
-                </behavior-type>
-            </behaviors>
         </family>
     </families>
     <layout-folder expanded="1">

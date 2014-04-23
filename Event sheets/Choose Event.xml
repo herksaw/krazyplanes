@@ -167,20 +167,20 @@
                 <action id="-15" name="Set visible" sid="1836217010949639" type="ButtonUnlock6">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action behavior="8Direction" id="10" name="Set vector Y" sid="9117180470892981" type="ButtonBuy2">
-                    <param id="0" name="Vector Y">280</param>
+                <action id="-15" name="Set visible" sid="6221288394694478" type="ButtonBuy2">
+                    <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-2" name="Set Y" sid="1483466052100164" type="ButtonBuy3">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="4844641199671277" type="ButtonBuy3">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="345044655865558" type="ButtonBuy4">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="8556511414072003" type="ButtonBuy4">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="3243892994576331" type="ButtonBuy5">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="7950974589739922" type="ButtonBuy5">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="305661431374488" type="ButtonBuy6">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="6354546179354523" type="ButtonBuy6">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -233,20 +233,20 @@
                 <action id="-15" name="Set visible" sid="655755171622434" type="ButtonUnlock6">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="722642424148747" type="ButtonBuy2">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="852271839874484" type="ButtonBuy2">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action behavior="8Direction" id="10" name="Set vector Y" sid="441904494658624" type="ButtonBuy3">
-                    <param id="0" name="Vector Y">280</param>
+                <action id="-15" name="Set visible" sid="3097050062735088" type="ButtonBuy3">
+                    <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-2" name="Set Y" sid="5647346128858339" type="ButtonBuy4">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="3785644675568633" type="ButtonBuy4">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="3850167870027347" type="ButtonBuy5">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="5136440295026957" type="ButtonBuy5">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="2205723902195249" type="ButtonBuy6">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="6750780111613602" type="ButtonBuy6">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -299,20 +299,20 @@
                 <action id="-15" name="Set visible" sid="5519235373783437" type="ButtonUnlock6">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="4114125082875668" type="ButtonBuy2">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="8275489320207984" type="ButtonBuy2">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="804087594341635" type="ButtonBuy3">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="8893661046515903" type="ButtonBuy3">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action behavior="8Direction" id="10" name="Set vector Y" sid="3644564996146321" type="ButtonBuy4">
-                    <param id="0" name="Vector Y">280</param>
+                <action id="-15" name="Set visible" sid="5792168141942497" type="ButtonBuy4">
+                    <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-2" name="Set Y" sid="3836418486454085" type="ButtonBuy5">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="1989630812220992" type="ButtonBuy5">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="5768913884671567" type="ButtonBuy6">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="3114076965137095" type="ButtonBuy6">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -365,20 +365,20 @@
                 <action id="-15" name="Set visible" sid="858497123730756" type="ButtonUnlock6">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="3210113818081122" type="ButtonBuy2">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="1051888701121696" type="ButtonBuy2">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="7905834871043756" type="ButtonBuy3">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="2270960801461607" type="ButtonBuy3">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="6026814082967159" type="ButtonBuy4">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="7257864321380925" type="ButtonBuy4">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action behavior="8Direction" id="10" name="Set vector Y" sid="7594902505276104" type="ButtonBuy5">
-                    <param id="0" name="Vector Y">280</param>
+                <action id="-15" name="Set visible" sid="3817605860498976" type="ButtonBuy5">
+                    <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-2" name="Set Y" sid="6391480867296" type="ButtonBuy6">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="9694428550550177" type="ButtonBuy6">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -431,20 +431,20 @@
                 <action id="-15" name="Set visible" sid="2829540064301346" type="ButtonUnlock6">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-2" name="Set Y" sid="3469239771116389" type="ButtonBuy2">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="9399717838290923" type="ButtonBuy2">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="9642770992285605" type="ButtonBuy3">
-                    <param id="0" name="Y">370</param>
+                <action id="-15" name="Set visible" sid="2046902392820112" type="ButtonBuy3">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="5601651432983971" type="ButtonBuy4">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="8524774319573703" type="ButtonBuy4">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-2" name="Set Y" sid="863353718320935" type="ButtonBuy5">
-                    <param id="0" name="Y">670</param>
+                <action id="-15" name="Set visible" sid="8260107960703641" type="ButtonBuy5">
+                    <param id="0" name="Visibility">0</param>
                 </action>
-                <action behavior="8Direction" id="10" name="Set vector Y" sid="8982601578892983" type="ButtonBuy6">
-                    <param id="0" name="Vector Y">280</param>
+                <action id="-15" name="Set visible" sid="6574192840060409" type="ButtonBuy6">
+                    <param id="0" name="Visibility">1</param>
                 </action>
             </actions>
         </event-block>
