@@ -2,21 +2,21 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0c build34</version>
+    <version>1.0d build2</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
     <app-id>com.chetandavdra.krazyplanes</app-id>
     <unique-id>7p7e95bnd7ze</unique-id>
-    <saved-with-version>16500</saved-with-version>
+    <saved-with-version>16800</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra &amp; Ludei" id="CJSAds" version="1">CocoonJS</plugin>
+        <plugin author="Scirra" id="C2WebSocket" version="1">WebSocket</plugin>
         <plugin author="Scirra" id="Facebook" version="1">Facebook</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="IAP" version="1">IAP</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Original work: Zack0Wack0 - LastDataElement modifications by juantar, minify by Johnny Sheffield" id="Socket" version="1">Socket</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -465,9 +465,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="CocoonJS" sid="2534219696373442">
-            <plugin id="CJSAds" />
-        </object-type>
         <object-type name="IAP" sid="3287528025355251">
             <plugin id="IAP" />
         </object-type>
@@ -543,8 +540,11 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="AJAX" sid="4553766320835194">
-            <plugin id="AJAX" />
+        <object-type name="WebSocket" sid="2076435240828848">
+            <plugin id="C2WebSocket" />
+        </object-type>
+        <object-type name="Socket" sid="9511734668892875">
+            <plugin id="Socket" />
         </object-type>
     </object-folder>
     <families>
@@ -703,15 +703,6 @@
             </properties>
         </global-instance>
         <global-instance type="WebStorage" uid="46" />
-        <global-instance type="CocoonJS" uid="31">
-            <properties>
-                <physics-engine>Accelerated</physics-engine>
-                <store-mode>Managed</store-mode>
-                <leaderboards-service>Google Play Games</leaderboards-service>
-                <store-sandbox>Enabled</store-sandbox>
-                <google-play-games-clientid>167529134205.apps.googleusercontent.com</google-play-games-clientid>
-            </properties>
-        </global-instance>
         <global-instance type="IAP" uid="34">
             <properties>
                 <test-mode>Yes</test-mode>
@@ -719,7 +710,8 @@
                 <item-group-id></item-group-id>
             </properties>
         </global-instance>
-        <global-instance type="AJAX" uid="47" />
+        <global-instance type="WebSocket" uid="70" />
+        <global-instance type="Socket" uid="31" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

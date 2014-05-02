@@ -17,10 +17,16 @@
                     <param id="1" name="Text to compare">&quot;true&quot;</param>
                     <param id="2" name="Case sensitivity">0</param>
                 </condition>
-                <condition id="1" name="Is in CocoonJS" sid="5505840358967584" type="CocoonJS" />
             </conditions>
             <actions>
-                <action id="14" name="Request login" sid="3528656764683016" type="CocoonJS" />
+                <action disabled="1" id="0" name="Connect" sid="970371297924418" type="WebSocket">
+                    <param id="0" name="URL">&quot;127.0.0.1&quot;</param>
+                    <param id="1" name="Protocol (optional)">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Connect" sid="9951919716041345" type="Socket">
+                    <param id="0" name="Address">&quot;192.237.247.72&quot;</param>
+                    <param id="1" name="Port">8080</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="6874944945832118">
@@ -831,10 +837,7 @@
                     <actions />
                     <sub-events>
                         <event-block sid="576181672736112">
-                            <conditions>
-                                <condition id="1" name="Is in CocoonJS" sid="3711027251041361" type="CocoonJS" />
-                                <condition id="6" name="Is store available" sid="6435507506343015" type="CocoonJS" />
-                            </conditions>
+                            <conditions />
                             <actions>
                                 <action id="-3" name="Create object" sid="3043535481888828" type="System">
                                     <param id="0" name="Object to create">LoadingDisc</param>
@@ -842,34 +845,22 @@
                                     <param id="2" name="X">LayoutWidth / 2</param>
                                     <param id="3" name="Y">LayoutHeight / 2</param>
                                 </action>
-                                <action id="12" name="Fetch products from store" sid="6599703070057734" type="CocoonJS">
-                                    <param id="0" name="Product list">&quot;buy.plane2,buy.plane3,buy.plane4,buy.plane5,buy.plane6&quot;</param>
-                                </action>
-                                <action id="9" name="Update products list" sid="950880526808241" type="CocoonJS" />
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="6515810984854869">
-                    <conditions>
-                        <condition id="1" name="Is in CocoonJS" sid="3440771730661401" type="CocoonJS" />
-                    </conditions>
+                    <conditions />
                     <actions />
                     <sub-events>
                         <event-block collapsed="1" sid="6721389364187506">
-                            <conditions>
-                                <condition id="13" name="On products fetch completed" sid="2484366024354796" type="CocoonJS" />
-                            </conditions>
+                            <conditions />
                             <actions>
                                 <action behavior="Fade" id="1" name="Start fade" sid="704689400943859" type="LoadingDisc" />
                             </actions>
                             <sub-events>
                                 <event-block sid="261956615872933">
-                                    <conditions>
-                                        <condition id="10" name="Is product purchased" sid="3776572494020872" type="CocoonJS">
-                                            <param id="0" name="Product ID">&quot;buy.plane2&quot;</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="0" name="Set local value" sid="2505578875420096" type="WebStorage">
                                             <param id="0" name="Key">&quot;plane2&quot;</param>
@@ -878,11 +869,7 @@
                                     </actions>
                                 </event-block>
                                 <event-block sid="8256168321175741">
-                                    <conditions>
-                                        <condition id="10" name="Is product purchased" sid="2531845427152919" type="CocoonJS">
-                                            <param id="0" name="Product ID">&quot;buy.plane3&quot;</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="0" name="Set local value" sid="8274053095050585" type="WebStorage">
                                             <param id="0" name="Key">&quot;plane3&quot;</param>
@@ -891,11 +878,7 @@
                                     </actions>
                                 </event-block>
                                 <event-block sid="5966581529689295">
-                                    <conditions>
-                                        <condition id="10" name="Is product purchased" sid="67894273075189" type="CocoonJS">
-                                            <param id="0" name="Product ID">&quot;buy.plane4&quot;</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="0" name="Set local value" sid="8072255979297338" type="WebStorage">
                                             <param id="0" name="Key">&quot;plane4&quot;</param>
@@ -904,11 +887,7 @@
                                     </actions>
                                 </event-block>
                                 <event-block sid="3960269851583224">
-                                    <conditions>
-                                        <condition id="10" name="Is product purchased" sid="1075093889246295" type="CocoonJS">
-                                            <param id="0" name="Product ID">&quot;buy.plane5&quot;</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="0" name="Set local value" sid="7875044915283093" type="WebStorage">
                                             <param id="0" name="Key">&quot;plane5&quot;</param>
@@ -917,11 +896,7 @@
                                     </actions>
                                 </event-block>
                                 <event-block sid="7736604311416435">
-                                    <conditions>
-                                        <condition id="10" name="Is product purchased" sid="2301013247712388" type="CocoonJS">
-                                            <param id="0" name="Product ID">&quot;buy.plane6&quot;</param>
-                                        </condition>
-                                    </conditions>
+                                    <conditions />
                                     <actions>
                                         <action id="0" name="Set local value" sid="954057954749111" type="WebStorage">
                                             <param id="0" name="Key">&quot;plane6&quot;</param>
