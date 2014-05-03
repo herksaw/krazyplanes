@@ -83,33 +83,6 @@
         </event-group>
         <event-group description="" sid="1152087620458756" title="System">
             <sub-events>
-                <event-block disabled="1" sid="7174638222720408">
-                    <conditions>
-                        <condition id="4" inverted="1" name="Is open" sid="189726843110778" type="WebSocket" />
-                        <condition id="6" name="Compare key value (as text)" sid="5801518132767173" type="WebStorage">
-                            <param id="0" name="Key">&quot;facebook&quot;</param>
-                            <param id="1" name="Text to compare">&quot;true&quot;</param>
-                            <param id="2" name="Case sensitivity">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Connect" sid="3738273406001284" type="WebSocket">
-                            <param id="0" name="URL">&quot;127.0.0.1&quot;</param>
-                            <param id="1" name="Protocol (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="2558902027563058">
-                    <conditions>
-                        <condition id="3" name="On disconnect" sid="4108664833901301" type="Socket" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Connect" sid="4026937088504807" type="Socket">
-                            <param id="0" name="Address">&quot;http://127.0.0.1/&quot;</param>
-                            <param id="1" name="Port">8080</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="7871331523120146">
                     <conditions>
                         <condition id="3" inverted="1" name="Local key exists" sid="1711327255055747" type="WebStorage">
@@ -1421,12 +1394,9 @@
                                     <param id="0" name="Key">&quot;score&quot;</param>
                                     <param id="1" name="Value">StoredScore + PlayerScore</param>
                                 </action>
-                                <action disabled="1" id="2" name="Send text" sid="8908671283467899" type="WebSocket">
-                                    <param id="0" name="Data">WebStorage.LocalValue(&quot;score&quot;)</param>
-                                </action>
                                 <action id="4" name="Emit" sid="3779512237560649" type="Socket">
                                     <param id="0" name="Event">&quot;player_send&quot;</param>
-                                    <param id="1" name="Data">&quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;&quot; &amp; Facebook.FullName &amp; &quot;&quot;&quot;,&quot;&quot;score&quot;&quot;:&quot;&quot;&quot; &amp; WebStorage.LocalValue(&quot;score&quot;) &amp; &quot;&quot;&quot;,&quot;&quot;id&quot;&quot;:&quot;&quot;&quot; &amp; Facebook.UserID &amp; &quot;&quot;&quot;}&quot;</param>
+                                    <param id="1" name="Data">&quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;&quot; &amp; Facebook.FullName &amp; &quot;&quot;&quot;,&quot;&quot;score&quot;&quot;:&quot;&quot;&quot; &amp; WebStorage.LocalValue(&quot;score&quot;) &amp; &quot;&quot;&quot;,&quot;&quot;fbid&quot;&quot;:&quot;&quot;&quot; &amp; Facebook.UserID &amp; &quot;&quot;&quot;}&quot;</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="2680364898422402" type="System">
                                     <param id="0" name="Variable">HasPostedScore</param>

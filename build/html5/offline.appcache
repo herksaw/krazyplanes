@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1399011102
+#1399113457
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -65,5 +65,6 @@ channel.html
 Amazon-Web-App-API.min.js
 Amazon-Web-App-API-tester.min.js
 tizen-iap.js
+socket.io.min.js
 NETWORK:
 *

@@ -19,12 +19,12 @@
                 </condition>
             </conditions>
             <actions>
-                <action disabled="1" id="0" name="Connect" sid="970371297924418" type="WebSocket">
-                    <param id="0" name="URL">&quot;127.0.0.1&quot;</param>
-                    <param id="1" name="Protocol (optional)">&quot;&quot;</param>
-                </action>
                 <action id="0" name="Connect" sid="9951919716041345" type="Socket">
                     <param id="0" name="Address">&quot;192.237.247.72&quot;</param>
+                    <param id="1" name="Port">8080</param>
+                </action>
+                <action disabled="1" id="0" name="Connect" sid="1827013362593665" type="Socket">
+                    <param id="0" name="Address">&quot;127.0.0.1&quot;</param>
                     <param id="1" name="Port">8080</param>
                 </action>
             </actions>

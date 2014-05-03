@@ -2,7 +2,7 @@
 <c2project>
     <name>Krazy Planes</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0d build2</version>
+    <version>1.0d build4</version>
     <author>Chetan Davdra</author>
     <author-email>chet@analogmethod.com</author-email>
     <author-website>http://analogmethod.com/</author-website>
@@ -11,7 +11,6 @@
     <saved-with-version>16800</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra" id="C2WebSocket" version="1">WebSocket</plugin>
         <plugin author="Scirra" id="Facebook" version="1">Facebook</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="IAP" version="1">IAP</plugin>
@@ -540,9 +539,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="WebSocket" sid="2076435240828848">
-            <plugin id="C2WebSocket" />
-        </object-type>
         <object-type name="Socket" sid="9511734668892875">
             <plugin id="Socket" />
         </object-type>
@@ -710,7 +706,6 @@
                 <item-group-id></item-group-id>
             </properties>
         </global-instance>
-        <global-instance type="WebSocket" uid="70" />
         <global-instance type="Socket" uid="31" />
     </global-instances>
     <sounds-folder expanded="1" />
